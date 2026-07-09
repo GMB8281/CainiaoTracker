@@ -1,0 +1,45 @@
+<resources>
+    <string name="app_name">CainiaoTracker</string>
+    <string name="title_home">Paczki</string>
+    <string name="title_archived">Zarchiwizowane</string>
+    <string name="title_settings">Ustawienia</string>
+    <string name="empty_state_title">Brak dodanych paczek</string>
+    <string name="empty_state_desc">Kliknij \"+\", aby dodać paczkę</string>
+    <string name="empty_state_archived">Brak zarchiwizowanych paczek</string>
+    <string name="dialog_title">Dodaj paczkę</string>
+    <string name="hint_name">Nazwa paczki</string>
+    <string name="hint_tracking_code">Kod śledzenia</string>
+    <string name="action_ok">OK</string>
+    <string name="action_cancel">Anuluj</string>
+    <string name="error_empty_fields">Wypełnij wszystkie pola</string>
+    <string name="snackbar_deleted">%1$s usunięto</string>
+    <string name="snackbar_archived">%1$s zarchiwizowano</string>
+    <string name="action_undo">COFNIJ</string>
+    <string name="settings_coming_soon">Wkrótce...</string>
+    <string name="status_label">Status</string>
+    <string name="origin_label">Pochodzenie</string>
+    <string name="destination_label">Cel</string>
+    <string name="timeline_label">Historia śledzenia</string>
+    <string name="error_fetching">Błąd podczas pobierania danych. Sprawdź połączenie.</string>
+    <string name="channel_background_service">Usługa w tle</string>
+    <string name="channel_package_update">Aktualizacja paczki</string>
+    <string name="notification_background_title">Usługa w tle</string>
+    <string name="notification_background_text">Monitorowanie statusu dostawy</string>
+    <string name="notification_update_title">Zmiana statusu paczki</string>
+    <string name="settings_category_notifications">Powiadomienia</string>
+    <string name="settings_sync_interval">Interwał synchronizacji</string>
+    <string name="package_details_title">Szczegóły paczki</string>
+    <string name="back_button">Wstecz</string>
+    <string name="error_title">Wystąpił błąd</string>
+    <string name="error_no_internet">Brak internetu</string>
+    <string name="action_retry">Spróbuj ponownie</string>
+    <string name="toast_unarchive">Przywróć paczkę z archiwum, aby zobaczyć szczegóły</string>
+    <string-array name="sync_intervals">
+        <item>1 godzina</item>
+        <item>2 godziny</item>
+        <item>3 godziny</item>
+        <item>6 godzin</item>
+        <item>12 godzin</item>
+        <item>24 godziny</item>
+    </string-array>
+</resources>

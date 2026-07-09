@@ -1,0 +1,45 @@
+<resources>
+    <string name="app_name">CainiaoTracker</string>
+    <string name="title_home">الطرود</string>
+    <string name="title_archived">المؤرشفة</string>
+    <string name="title_settings">الإعدادات</string>
+    <string name="empty_state_title">لم يتم إضافة أي طرود</string>
+    <string name="empty_state_desc">انقر على \"+\" لإضافة طرد</string>
+    <string name="empty_state_archived">لا توجد طرود مؤرشفة</string>
+    <string name="dialog_title">إضافة طرد</string>
+    <string name="hint_name">اسم الطرد</string>
+    <string name="hint_tracking_code">رقم التتبع</string>
+    <string name="action_ok">حسناً</string>
+    <string name="action_cancel">إلغاء</string>
+    <string name="error_empty_fields">يرجى ملء جميع الحقول</string>
+    <string name="snackbar_deleted">تم حذف %1$s</string>
+    <string name="snackbar_archived">تم أرشفة %1$s</string>
+    <string name="action_undo">تراجع</string>
+    <string name="settings_coming_soon">قريباً...</string>
+    <string name="status_label">الحالة</string>
+    <string name="origin_label">المصدر</string>
+    <string name="destination_label">الوجهة</string>
+    <string name="timeline_label">سجل التتبع</string>
+    <string name="error_fetching">خطأ في جلب البيانات. تحقق من اتصالك.</string>
+    <string name="channel_background_service">خدمة الخلفية</string>
+    <string name="channel_package_update">تحديث الطرد</string>
+    <string name="notification_background_title">خدمة الخلفية</string>
+    <string name="notification_background_text">مراقبة حالة التسليم</string>
+    <string name="notification_update_title">تغيرت حالة الطرد</string>
+    <string name="settings_category_notifications">الإشعارات</string>
+    <string name="settings_sync_interval">فترة المزامنة</string>
+    <string name="package_details_title">تفاصيل الطرد</string>
+    <string name="back_button">رجوع</string>
+    <string name="error_title">حدث خطأ</string>
+    <string name="error_no_internet">لا يوجد إنترنت</string>
+    <string name="action_retry">إعادة المحاولة</string>
+    <string name="toast_unarchive">قم بإلغاء أرشفة الطرد لرؤية التفاصيل</string>
+    <string-array name="sync_intervals">
+        <item>1 ساعة</item>
+        <item>2 ساعات</item>
+        <item>3 ساعات</item>
+        <item>6 ساعات</item>
+        <item>12 ساعة</item>
+        <item>24 ساعة</item>
+    </string-array>
+</resources>

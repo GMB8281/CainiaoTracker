@@ -1,0 +1,45 @@
+<resources>
+    <string name="app_name">CainiaoTracker</string>
+    <string name="title_home">Paquetes</string>
+    <string name="title_archived">Archivados</string>
+    <string name="title_settings">Configuración</string>
+    <string name="empty_state_title">No hay paquetes agregados</string>
+    <string name="empty_state_desc">Haz clic en \"+\" para agregar un paquete</string>
+    <string name="empty_state_archived">No hay paquetes archivados</string>
+    <string name="dialog_title">Agregar paquete</string>
+    <string name="hint_name">Nombre del paquete</string>
+    <string name="hint_tracking_code">Código de seguimiento</string>
+    <string name="action_ok">Aceptar</string>
+    <string name="action_cancel">Cancelar</string>
+    <string name="error_empty_fields">Completa todos los campos</string>
+    <string name="snackbar_deleted">%1$s eliminado</string>
+    <string name="snackbar_archived">%1$s archivado</string>
+    <string name="action_undo">DESHACER</string>
+    <string name="settings_coming_soon">Próximamente...</string>
+    <string name="status_label">Estado</string>
+    <string name="origin_label">Origen</string>
+    <string name="destination_label">Destino</string>
+    <string name="timeline_label">Historial de seguimiento</string>
+    <string name="error_fetching">Error al obtener datos. Revisa tu conexión.</string>
+    <string name="channel_background_service">Servicio en segundo plano</string>
+    <string name="channel_package_update">Actualización de paquete</string>
+    <string name="notification_background_title">Servicio en segundo plano</string>
+    <string name="notification_background_text">Monitoreando estado de entrega</string>
+    <string name="notification_update_title">Cambio en el estado del paquete</string>
+    <string name="settings_category_notifications">Notificaciones</string>
+    <string name="settings_sync_interval">Intervalo de sincronización</string>
+    <string name="package_details_title">Detalles del paquete</string>
+    <string name="back_button">Atrás</string>
+    <string name="error_title">Ocurrió un error</string>
+    <string name="error_no_internet">Sin internet</string>
+    <string name="action_retry">Reintentar</string>
+    <string name="toast_unarchive">Desarchiva el paquete para ver los detalles</string>
+    <string-array name="sync_intervals">
+        <item>1 hora</item>
+        <item>2 horas</item>
+        <item>3 horas</item>
+        <item>6 horas</item>
+        <item>12 horas</item>
+        <item>24 horas</item>
+    </string-array>
+</resources>

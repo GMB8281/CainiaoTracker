@@ -1,0 +1,45 @@
+<resources>
+    <string name="app_name">CainiaoTracker</string>
+    <string name="title_home">Paketler</string>
+    <string name="title_archived">Arşivlenenler</string>
+    <string name="title_settings">Ayarlar</string>
+    <string name="empty_state_title">Eklenen paket yok</string>
+    <string name="empty_state_desc">Bir paket eklemek için \"+\" simgesine tıklayın</string>
+    <string name="empty_state_archived">Arşivlenmiş paket yok</string>
+    <string name="dialog_title">Paket ekle</string>
+    <string name="hint_name">Paket adı</string>
+    <string name="hint_tracking_code">Takip kodu</string>
+    <string name="action_ok">Tamam</string>
+    <string name="action_cancel">İptal</string>
+    <string name="error_empty_fields">Tüm alanları doldurun</string>
+    <string name="snackbar_deleted">%1$s silindi</string>
+    <string name="snackbar_archived">%1$s arşivlendi</string>
+    <string name="action_undo">GERİ AL</string>
+    <string name="settings_coming_soon">Yakında...</string>
+    <string name="status_label">Durum</string>
+    <string name="origin_label">Başlangıç</string>
+    <string name="destination_label">Varış</string>
+    <string name="timeline_label">Takip geçmişi</string>
+    <string name="error_fetching">Veri alınırken hata oluştu. Bağlantınızı kontrol edin.</string>
+    <string name="channel_background_service">Arka plan hizmeti</string>
+    <string name="channel_package_update">Paket güncellemesi</string>
+    <string name="notification_background_title">Arka plan hizmeti</string>
+    <string name="notification_background_text">Teslimat durumu izleniyor</string>
+    <string name="notification_update_title">Paket durumu değişti</string>
+    <string name="settings_category_notifications">Bildirimler</string>
+    <string name="settings_sync_interval">Senkronizasyon aralığı</string>
+    <string name="package_details_title">Paket detayları</string>
+    <string name="back_button">Geri</string>
+    <string name="error_title">Bir hata oluştu</string>
+    <string name="error_no_internet">İnternet yok</string>
+    <string name="action_retry">Tekrar dene</string>
+    <string name="toast_unarchive">Detayları görmek için paketi arşivden çıkarın</string>
+    <string-array name="sync_intervals">
+        <item>1 saat</item>
+        <item>2 saat</item>
+        <item>3 saat</item>
+        <item>6 saat</item>
+        <item>12 saat</item>
+        <item>24 saat</item>
+    </string-array>
+</resources>

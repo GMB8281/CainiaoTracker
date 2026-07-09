@@ -1,0 +1,45 @@
+<resources>
+    <string name="app_name">CainiaoTracker</string>
+    <string name="title_home">패키지</string>
+    <string name="title_archived">보관됨</string>
+    <string name="title_settings">설정</string>
+    <string name="empty_state_title">추가된 패키지 없음</string>
+    <string name="empty_state_desc">\"+\"를 클릭하여 패키지를 추가하세요</string>
+    <string name="empty_state_archived">보관된 패키지 없음</string>
+    <string name="dialog_title">패키지 추가</string>
+    <string name="hint_name">패키지 이름</string>
+    <string name="hint_tracking_code">배송 조회 번호</string>
+    <string name="action_ok">확인</string>
+    <string name="action_cancel">취소</string>
+    <string name="error_empty_fields">모든 필드를 입력하세요</string>
+    <string name="snackbar_deleted">%1$s 삭제됨</string>
+    <string name="snackbar_archived">%1$s 보관됨</string>
+    <string name="action_undo">실행 취소</string>
+    <string name="settings_coming_soon">곧 제공 예정...</string>
+    <string name="status_label">상태</string>
+    <string name="origin_label">출발지</string>
+    <string name="destination_label">도착지</string>
+    <string name="timeline_label">배송 내역</string>
+    <string name="error_fetching">데이터를 가져오는 중 오류가 발생했습니다. 연결을 확인하세요.</string>
+    <string name="channel_background_service">백그라운드 서비스</string>
+    <string name="channel_package_update">패키지 업데이트</string>
+    <string name="notification_background_title">백그라운드 서비스</string>
+    <string name="notification_background_text">배송 상태 모니터링 중</string>
+    <string name="notification_update_title">패키지 상태 변경됨</string>
+    <string name="settings_category_notifications">알림</string>
+    <string name="settings_sync_interval">동기화 간격</string>
+    <string name="package_details_title">패키지 세부정보</string>
+    <string name="back_button">뒤로</string>
+    <string name="error_title">오류가 발생했습니다</string>
+    <string name="error_no_internet">인터넷 없음</string>
+    <string name="action_retry">다시 시도</string>
+    <string name="toast_unarchive">세부정보를 보려면 패키지 보관을 해제하세요</string>
+    <string-array name="sync_intervals">
+        <item>1시간</item>
+        <item>2시간</item>
+        <item>3시간</item>
+        <item>6시간</item>
+        <item>12시간</item>
+        <item>24시간</item>
+    </string-array>
+</resources>

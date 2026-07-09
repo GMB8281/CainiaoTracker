@@ -1,0 +1,45 @@
+<resources>
+    <string name="app_name">CainiaoTracker</string>
+    <string name="title_home">Pacchi</string>
+    <string name="title_archived">Archiviati</string>
+    <string name="title_settings">Impostazioni</string>
+    <string name="empty_state_title">Nessun pacco aggiunto</string>
+    <string name="empty_state_desc">Clicca su \"+\" per aggiungere un pacco</string>
+    <string name="empty_state_archived">Nessun pacco archiviato</string>
+    <string name="dialog_title">Aggiungi pacco</string>
+    <string name="hint_name">Nome del pacco</string>
+    <string name="hint_tracking_code">Codice di tracciamento</string>
+    <string name="action_ok">OK</string>
+    <string name="action_cancel">Annulla</string>
+    <string name="error_empty_fields">Compila tutti i campi</string>
+    <string name="snackbar_deleted">%1$s eliminato</string>
+    <string name="snackbar_archived">%1$s archiviato</string>
+    <string name="action_undo">ANNULLA</string>
+    <string name="settings_coming_soon">In arrivo...</string>
+    <string name="status_label">Stato</string>
+    <string name="origin_label">Origine</string>
+    <string name="destination_label">Destinazione</string>
+    <string name="timeline_label">Cronologia tracciamento</string>
+    <string name="error_fetching">Errore nel recupero dei dati. Controlla la tua connessione.</string>
+    <string name="channel_background_service">Servizio in background</string>
+    <string name="channel_package_update">Aggiornamento pacco</string>
+    <string name="notification_background_title">Servizio in background</string>
+    <string name="notification_background_text">Monitoraggio stato di consegna</string>
+    <string name="notification_update_title">Modifica stato pacco</string>
+    <string name="settings_category_notifications">Notifiche</string>
+    <string name="settings_sync_interval">Intervallo di sincronizzazione</string>
+    <string name="package_details_title">Dettagli del pacco</string>
+    <string name="back_button">Indietro</string>
+    <string name="error_title">Si è verificato un errore</string>
+    <string name="error_no_internet">Nessuna connessione internet</string>
+    <string name="action_retry">Riprova</string>
+    <string name="toast_unarchive">Rimuovi il pacco dall\'archivio per vedere i dettagli</string>
+    <string-array name="sync_intervals">
+        <item>1 ora</item>
+        <item>2 ore</item>
+        <item>3 ore</item>
+        <item>6 ore</item>
+        <item>12 ore</item>
+        <item>24 ore</item>
+    </string-array>
+</resources>

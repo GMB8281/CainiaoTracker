@@ -1,0 +1,45 @@
+<resources>
+    <string name="app_name">菜鸟追蹤</string>
+    <string name="title_home">包裹</string>
+    <string name="title_archived">已封存</string>
+    <string name="title_settings">設定</string>
+    <string name="empty_state_title">未新增任何包裹</string>
+    <string name="empty_state_desc">點擊 \"+\" 新增包裹</string>
+    <string name="empty_state_archived">沒有已封存的包裹</string>
+    <string name="dialog_title">新增包裹</string>
+    <string name="hint_name">包裹名稱</string>
+    <string name="hint_tracking_code">追蹤號碼</string>
+    <string name="action_ok">確定</string>
+    <string name="action_cancel">取消</string>
+    <string name="error_empty_fields">請填寫所有欄位</string>
+    <string name="snackbar_deleted">%1$s 已刪除</string>
+    <string name="snackbar_archived">%1$s 已封存</string>
+    <string name="action_undo">復原</string>
+    <string name="settings_coming_soon">敬請期待...</string>
+    <string name="status_label">狀態</string>
+    <string name="origin_label">寄件地</string>
+    <string name="destination_label">目的地</string>
+    <string name="timeline_label">物流軌跡</string>
+    <string name="error_fetching">取得資料時發生錯誤。請檢查您的網路連線。</string>
+    <string name="channel_background_service">背景服務</string>
+    <string name="channel_package_update">包裹更新</string>
+    <string name="notification_background_title">背景服務</string>
+    <string name="notification_background_text">正在監控物流狀態</string>
+    <string name="notification_update_title">包裹狀態已更改</string>
+    <string name="settings_category_notifications">通知</string>
+    <string name="settings_sync_interval">同步間隔</string>
+    <string name="package_details_title">包裹詳情</string>
+    <string name="back_button">返回</string>
+    <string name="error_title">發生錯誤</string>
+    <string name="error_no_internet">無網路連線</string>
+    <string name="action_retry">重試</string>
+    <string name="toast_unarchive">取消封存包裹以查看詳情</string>
+    <string-array name="sync_intervals">
+        <item>1 小時</item>
+        <item>2 小時</item>
+        <item>3 小時</item>
+        <item>6 小時</item>
+        <item>12 小時</item>
+        <item>24 小時</item>
+    </string-array>
+</resources>

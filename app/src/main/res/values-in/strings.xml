@@ -1,0 +1,45 @@
+<resources>
+    <string name="app_name">CainiaoTracker</string>
+    <string name="title_home">Paket</string>
+    <string name="title_archived">Diarsipkan</string>
+    <string name="title_settings">Pengaturan</string>
+    <string name="empty_state_title">Belum ada paket yang ditambahkan</string>
+    <string name="empty_state_desc">Klik \"+\" untuk menambahkan paket</string>
+    <string name="empty_state_archived">Tidak ada paket yang diarsipkan</string>
+    <string name="dialog_title">Tambah paket</string>
+    <string name="hint_name">Nama paket</string>
+    <string name="hint_tracking_code">Kode resi</string>
+    <string name="action_ok">OKE</string>
+    <string name="action_cancel">Batal</string>
+    <string name="error_empty_fields">Isi semua kolom</string>
+    <string name="snackbar_deleted">%1$s dihapus</string>
+    <string name="snackbar_archived">%1$s diarsipkan</string>
+    <string name="action_undo">URUNGKAN</string>
+    <string name="settings_coming_soon">Segera hadir...</string>
+    <string name="status_label">Status</string>
+    <string name="origin_label">Asal</string>
+    <string name="destination_label">Tujuan</string>
+    <string name="timeline_label">Riwayat pelacakan</string>
+    <string name="error_fetching">Gagal mengambil data. Periksa koneksi Anda.</string>
+    <string name="channel_background_service">Layanan latar belakang</string>
+    <string name="channel_package_update">Pembaruan paket</string>
+    <string name="notification_background_title">Layanan latar belakang</string>
+    <string name="notification_background_text">Memantau status pengiriman</string>
+    <string name="notification_update_title">Status paket berubah</string>
+    <string name="settings_category_notifications">Notifikasi</string>
+    <string name="settings_sync_interval">Interval sinkronisasi</string>
+    <string name="package_details_title">Detail paket</string>
+    <string name="back_button">Kembali</string>
+    <string name="error_title">Terjadi kesalahan</string>
+    <string name="error_no_internet">Tidak ada internet</string>
+    <string name="action_retry">Coba lagi</string>
+    <string name="toast_unarchive">Keluarkan paket dari arsip untuk melihat detail</string>
+    <string-array name="sync_intervals">
+        <item>1 jam</item>
+        <item>2 jam</item>
+        <item>3 jam</item>
+        <item>6 jam</item>
+        <item>12 jam</item>
+        <item>24 jam</item>
+    </string-array>
+</resources>

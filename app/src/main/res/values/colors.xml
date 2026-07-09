@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Primary Colors - Azul #0A68F6 -->
+    <color name="primary_blue">#0A68F6</color>
+    <color name="primary_blue_light">#A8C7FA</color>
+    <color name="primary_blue_dark">#004494</color>
+
+    <!-- Secondary Colors -->
+    <color name="secondary_blue">#5B7FA8</color>
+    <color name="secondary_blue_light">#B8D4E8</color>
+    <color name="secondary_blue_dark">#3D5F82</color>
+
+    <!-- Tertiary Colors -->
+    <color name="tertiary_blue">#6B5B95</color>
+    <color name="tertiary_blue_light">#C4B5E0</color>
+
+    <!-- Error -->
+    <color name="error_red">#B3261E</color>
+    <color name="error_red_light">#F2B8B5</color>
+
+    <!-- Background & Surface - Modo Claro -->
+    <color name="background_light">#FFFBFE</color>
+    <color name="surface_light">#FFFBFE</color>
+    <color name="surface_variant_light">#E7E0EC</color>
+
+    <!-- Background & Surface - Modo Escuro -->
+    <color name="background_dark">#1C1B1F</color>
+    <color name="surface_dark">#2B2930</color>
+    <color name="surface_variant_dark">#49454F</color>
+
+    <!-- Text Colors -->
+    <color name="black">#FF000000</color>
+    <color name="black_60">#99000000</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="white_60">#99FFFFFF</color>
+
+    <!-- Legacy colors (compatibilidade) -->
+    <color name="purple_200">#FFBB86FC</color>
+    <color name="purple_500">#FF6200EE</color>
+    <color name="purple_700">#FF3700B3</color>
+    <color name="teal_200">#FF03DAC5</color>
+    <color name="teal_700">#FF018786</color>
+</resources>

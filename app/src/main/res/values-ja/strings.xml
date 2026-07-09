@@ -1,0 +1,45 @@
+<resources>
+    <string name="app_name">CainiaoTracker</string>
+    <string name="title_home">荷物</string>
+    <string name="title_archived">アーカイブ済み</string>
+    <string name="title_settings">設定</string>
+    <string name="empty_state_title">荷物が追加されていません</string>
+    <string name="empty_state_desc">「+」をクリックして荷物を追加してください</string>
+    <string name="empty_state_archived">アーカイブ済みの荷物はありません</string>
+    <string name="dialog_title">荷物を追加</string>
+    <string name="hint_name">荷物の名前</string>
+    <string name="hint_tracking_code">追跡番号</string>
+    <string name="action_ok">OK</string>
+    <string name="action_cancel">キャンセル</string>
+    <string name="error_empty_fields">すべての項目を入力してください</string>
+    <string name="snackbar_deleted">%1$s を削除しました</string>
+    <string name="snackbar_archived">%1$s をアーカイブしました</string>
+    <string name="action_undo">元に戻す</string>
+    <string name="settings_coming_soon">近日公開...</string>
+    <string name="status_label">ステータス</string>
+    <string name="origin_label">発送元</string>
+    <string name="destination_label">お届け先</string>
+    <string name="timeline_label">追跡履歴</string>
+    <string name="error_fetching">データの取得中にエラーが発生しました。接続を確認してください。</string>
+    <string name="channel_background_service">バックグラウンドサービス</string>
+    <string name="channel_package_update">荷物の更新</string>
+    <string name="notification_background_title">バックグラウンドサービス</string>
+    <string name="notification_background_text">配送ステータスを監視中</string>
+    <string name="notification_update_title">荷物のステータスが変更されました</string>
+    <string name="settings_category_notifications">通知</string>
+    <string name="settings_sync_interval">同期の同間隔</string>
+    <string name="package_details_title">荷物の詳細</string>
+    <string name="back_button">戻る</string>
+    <string name="error_title">エラーが発生しました</string>
+    <string name="error_no_internet">インターネット接続がありません</string>
+    <string name="action_retry">再試行</string>
+    <string name="toast_unarchive">詳細を見るには荷物のアーカイブを解除してください</string>
+    <string-array name="sync_intervals">
+        <item>1 時間</item>
+        <item>2 時間</item>
+        <item>3 時間</item>
+        <item>6 時間</item>
+        <item>12 時間</item>
+        <item>24 時間</item>
+    </string-array>
+</resources>

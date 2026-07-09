@@ -1,0 +1,56 @@
+<resources>
+    <string name="app_name">CainiaoTracker</string>
+    <string name="title_home">Pacotes</string>
+    <string name="title_archived">Arquivados</string>
+    <string name="title_settings">Configurações</string>
+
+    <string name="empty_state_title">Nenhum pacote adicionado</string>
+    <string name="empty_state_desc">Clique em \"+\" para adicionar um pacote</string>
+    <string name="empty_state_archived">Nenhum pacote arquivado</string>
+
+    <string name="dialog_title">Adicionar pacote</string>
+    <string name="hint_name">Nome do pacote</string>
+    <string name="hint_tracking_code">Código de rastreio</string>
+    <string name="action_ok">OK</string>
+    <string name="action_cancel">Cancelar</string>
+    <string name="error_empty_fields">Preencha todos os campos</string>
+
+    <string name="snackbar_deleted">%1$s deletado</string>
+    <string name="snackbar_archived">%1$s arquivado</string>
+    <string name="action_undo">DESFAZER</string>
+
+    <string name="settings_coming_soon">Em breve...</string>
+
+    <string name="status_label">Status</string>
+    <string name="origin_label">Origem</string>
+    <string name="destination_label">Destino</string>
+    <string name="timeline_label">Histórico de rastreamento</string>
+    <string name="error_fetching">Erro ao buscar dados. Verifique sua conexão.</string>
+
+    <string name="channel_background_service">Serviço em segundo plano</string>
+    <string name="channel_package_update">Atualização de pacote</string>
+    <string name="notification_background_title">Serviço em segundo plano</string>
+    <string name="notification_background_text">Monitorando status de entrega</string>
+    <string name="notification_update_title">Mudança no status do pacote</string>
+
+    <string name="settings_category_notifications">Notificações</string>
+    <string name="settings_sync_interval">Intervalo de sincronização</string>
+
+    <string name="package_details_title">Detalhes do pacote</string>
+    <string name="back_button">Voltar</string>
+
+    <string name="error_title">Houve um erro</string>
+    <string name="error_no_internet">Sem internet</string>
+    <string name="action_retry">Tentar novamente</string>
+
+    <string name="toast_unarchive">Desarquive o pacote para ver detalhes</string>
+
+    <string-array name="sync_intervals">
+        <item>1 hora</item>
+        <item>2 horas</item>
+        <item>3 horas</item>
+        <item>6 horas</item>
+        <item>12 horas</item>
+        <item>24 horas</item>
+    </string-array>
+</resources>

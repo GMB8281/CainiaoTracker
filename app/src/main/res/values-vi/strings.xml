@@ -1,0 +1,45 @@
+<resources>
+    <string name="app_name">CainiaoTracker</string>
+    <string name="title_home">Gói hàng</string>
+    <string name="title_archived">Đã lưu trữ</string>
+    <string name="title_settings">Cài đặt</string>
+    <string name="empty_state_title">Chưa có gói hàng nào</string>
+    <string name="empty_state_desc">Nhấp vào \"+\" để thêm gói hàng</string>
+    <string name="empty_state_archived">Không có gói hàng lưu trữ</string>
+    <string name="dialog_title">Thêm gói hàng</string>
+    <string name="hint_name">Tên gói hàng</string>
+    <string name="hint_tracking_code">Mã theo dõi</string>
+    <string name="action_ok">OK</string>
+    <string name="action_cancel">Hủy</string>
+    <string name="error_empty_fields">Vui lòng điền tất cả các trường</string>
+    <string name="snackbar_deleted">Đã xóa %1$s</string>
+    <string name="snackbar_archived">Đã lưu trữ %1$s</string>
+    <string name="action_undo">HOÀN TÁC</string>
+    <string name="settings_coming_soon">Sắp ra mắt...</string>
+    <string name="status_label">Trạng thái</string>
+    <string name="origin_label">Nơi gửi</string>
+    <string name="destination_label">Nơi đến</string>
+    <string name="timeline_label">Lịch sử theo dõi</string>
+    <string name="error_fetching">Lỗi khi tải dữ liệu. Kiểm tra kết nối của bạn.</string>
+    <string name="channel_background_service">Dịch vụ nền</string>
+    <string name="channel_package_update">Cập nhật gói hàng</string>
+    <string name="notification_background_title">Dịch vụ nền</string>
+    <string name="notification_background_text">Đang theo dõi trạng thái giao hàng</string>
+    <string name="notification_update_title">Trạng thái gói hàng thay đổi</string>
+    <string name="settings_category_notifications">Thông báo</string>
+    <string name="settings_sync_interval">Khoảng thời gian đồng bộ</string>
+    <string name="package_details_title">Chi tiết gói hàng</string>
+    <string name="back_button">Quay lại</string>
+    <string name="error_title">Đã xảy ra lỗi</string>
+    <string name="error_no_internet">Không có kết nối mạng</string>
+    <string name="action_retry">Thử lại</string>
+    <string name="toast_unarchive">Hủy lưu trữ gói hàng để xem chi tiết</string>
+    <string-array name="sync_intervals">
+        <item>1 giờ</item>
+        <item>2 giờ</item>
+        <item>3 giờ</item>
+        <item>6 giờ</item>
+        <item>12 giờ</item>
+        <item>24 giờ</item>
+    </string-array>
+</resources>

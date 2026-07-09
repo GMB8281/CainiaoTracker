@@ -1,0 +1,45 @@
+<resources>
+    <string name="app_name">CainiaoTracker</string>
+    <string name="title_home">Colis</string>
+    <string name="title_archived">Archivés</string>
+    <string name="title_settings">Paramètres</string>
+    <string name="empty_state_title">Aucun colis ajouté</string>
+    <string name="empty_state_desc">Cliquez sur \"+\" pour ajouter un colis</string>
+    <string name="empty_state_archived">Aucun colis archivé</string>
+    <string name="dialog_title">Ajouter un colis</string>
+    <string name="hint_name">Nom du colis</string>
+    <string name="hint_tracking_code">Numéro de suivi</string>
+    <string name="action_ok">OK</string>
+    <string name="action_cancel">Annuler</string>
+    <string name="error_empty_fields">Remplissez tous les champs</string>
+    <string name="snackbar_deleted">%1$s supprimé</string>
+    <string name="snackbar_archived">%1$s archivé</string>
+    <string name="action_undo">ANNULER</string>
+    <string name="settings_coming_soon">Bientôt disponible...</string>
+    <string name="status_label">Statut</string>
+    <string name="origin_label">Origine</string>
+    <string name="destination_label">Destination</string>
+    <string name="timeline_label">Historique de suivi</string>
+    <string name="error_fetching">Erreur lors de la récupération des données. Vérifiez votre connexion.</string>
+    <string name="channel_background_service">Service en arrière-plan</string>
+    <string name="channel_package_update">Mise à jour du colis</string>
+    <string name="notification_background_title">Service en arrière-plan</string>
+    <string name="notification_background_text">Surveillance du statut de livraison</string>
+    <string name="notification_update_title">Changement de statut du colis</string>
+    <string name="settings_category_notifications">Notifications</string>
+    <string name="settings_sync_interval">Intervalle de synchronisation</string>
+    <string name="package_details_title">Détails du colis</string>
+    <string name="back_button">Retour</string>
+    <string name="error_title">Une erreur s\'est produite</string>
+    <string name="error_no_internet">Pas d\'internet</string>
+    <string name="action_retry">Réessayer</string>
+    <string name="toast_unarchive">Désarchivez le colis pour voir les détails</string>
+    <string-array name="sync_intervals">
+        <item>1 heure</item>
+        <item>2 heures</item>
+        <item>3 heures</item>
+        <item>6 heures</item>
+        <item>12 heures</item>
+        <item>24 heures</item>
+    </string-array>
+</resources>

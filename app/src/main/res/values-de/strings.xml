@@ -1,0 +1,45 @@
+<resources>
+    <string name="app_name">CainiaoTracker</string>
+    <string name="title_home">Pakete</string>
+    <string name="title_archived">Archiviert</string>
+    <string name="title_settings">Einstellungen</string>
+    <string name="empty_state_title">Keine Pakete hinzugefügt</string>
+    <string name="empty_state_desc">Klicken Sie auf \"+\", um ein Paket hinzuzufügen</string>
+    <string name="empty_state_archived">Keine archivierten Pakete</string>
+    <string name="dialog_title">Paket hinzufügen</string>
+    <string name="hint_name">Paketname</string>
+    <string name="hint_tracking_code">Sendungsnummer</string>
+    <string name="action_ok">OK</string>
+    <string name="action_cancel">Abbrechen</string>
+    <string name="error_empty_fields">Bitte alle Felder ausfüllen</string>
+    <string name="snackbar_deleted">%1$s gelöscht</string>
+    <string name="snackbar_archived">%1$s archiviert</string>
+    <string name="action_undo">RÜCKGÄNGIG</string>
+    <string name="settings_coming_soon">Demnächst...</string>
+    <string name="status_label">Status</string>
+    <string name="origin_label">Herkunft</string>
+    <string name="destination_label">Ziel</string>
+    <string name="timeline_label">Sendungsverlauf</string>
+    <string name="error_fetching">Fehler beim Abrufen der Daten. Überprüfen Sie Ihre Verbindung.</string>
+    <string name="channel_background_service">Hintergrunddienst</string>
+    <string name="channel_package_update">Paketaktualisierung</string>
+    <string name="notification_background_title">Hintergrunddienst</string>
+    <string name="notification_background_text">Lieferstatus wird überwacht</string>
+    <string name="notification_update_title">Paketstatus geändert</string>
+    <string name="settings_category_notifications">Benachrichtigungen</string>
+    <string name="settings_sync_interval">Synchronisierungsintervall</string>
+    <string name="package_details_title">Paketdetails</string>
+    <string name="back_button">Zurück</string>
+    <string name="error_title">Es ist ein Fehler aufgetreten</string>
+    <string name="error_no_internet">Kein Internet</string>
+    <string name="action_retry">Erneut versuchen</string>
+    <string name="toast_unarchive">Paket dearchivieren, um Details zu sehen</string>
+    <string-array name="sync_intervals">
+        <item>1 Stunde</item>
+        <item>2 Stunden</item>
+        <item>3 Stunden</item>
+        <item>6 Stunden</item>
+        <item>12 Stunden</item>
+        <item>24 Stunden</item>
+    </string-array>
+</resources>

@@ -1,0 +1,45 @@
+<resources>
+    <string name="app_name">CainiaoTracker</string>
+    <string name="title_home">पैकेज</string>
+    <string name="title_archived">संग्रहीत</string>
+    <string name="title_settings">सेटिंग्स</string>
+    <string name="empty_state_title">कोई पैकेज नहीं जोड़ा गया</string>
+    <string name="empty_state_desc">पैकेज जोड़ने के लिए \"+\" पर क्लिक करें</string>
+    <string name="empty_state_archived">कोई संग्रहीत पैकेज नहीं</string>
+    <string name="dialog_title">पैकेज जोड़ें</string>
+    <string name="hint_name">पैकेज का नाम</string>
+    <string name="hint_tracking_code">ट्रैकिंग कोड</string>
+    <string name="action_ok">ठीक है</string>
+    <string name="action_cancel">रद्द करें</string>
+    <string name="error_empty_fields">सभी फ़ील्ड भरें</string>
+    <string name="snackbar_deleted">%1$s हटा दिया गया</string>
+    <string name="snackbar_archived">%1$s संग्रहीत किया गया</string>
+    <string name="action_undo">पूर्ववत करें</string>
+    <string name="settings_coming_soon">जल्द आ रहा है...</string>
+    <string name="status_label">स्थिति</string>
+    <string name="origin_label">उत्पत्ति</string>
+    <string name="destination_label">गंतव्य</string>
+    <string name="timeline_label">ट्रैकिंग इतिहास</string>
+    <string name="error_fetching">डेटा प्राप्त करने में त्रुटि। अपना कनेक्शन जांचें।</string>
+    <string name="channel_background_service">पृष्ठभूमि सेवा</string>
+    <string name="channel_package_update">पैकेज अपडेट</string>
+    <string name="notification_background_title">पृष्ठभूमि सेवा</string>
+    <string name="notification_background_text">डिलीवरी स्थिति की निगरानी</string>
+    <string name="notification_update_title">पैकेज की स्थिति बदल गई</string>
+    <string name="settings_category_notifications">सूचनाएं</string>
+    <string name="settings_sync_interval">सिंक अंतराल</string>
+    <string name="package_details_title">पैकेज विवरण</string>
+    <string name="back_button">वापस</string>
+    <string name="error_title">एक त्रुटि हुई</string>
+    <string name="error_no_internet">कोई इंटरनेट नहीं</string>
+    <string name="action_retry">पुनः प्रयास करें</string>
+    <string name="toast_unarchive">विवरण देखने के लिए पैकेज को संग्रह से निकालें</string>
+    <string-array name="sync_intervals">
+        <item>1 घंटा</item>
+        <item>2 घंटे</item>
+        <item>3 घंटे</item>
+        <item>6 घंटे</item>
+        <item>12 घंटे</item>
+        <item>24 घंटे</item>
+    </string-array>
+</resources>

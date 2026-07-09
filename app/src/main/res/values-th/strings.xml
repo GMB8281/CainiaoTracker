@@ -1,0 +1,45 @@
+<resources>
+    <string name="app_name">CainiaoTracker</string>
+    <string name="title_home">พัสดุ</string>
+    <string name="title_archived">จัดเก็บแล้ว</string>
+    <string name="title_settings">การตั้งค่า</string>
+    <string name="empty_state_title">ยังไม่ได้เพิ่มพัสดุ</string>
+    <string name="empty_state_desc">คลิก \"+\" เพื่อเพิ่มพัสดุ</string>
+    <string name="empty_state_archived">ไม่มีพัสดุที่จัดเก็บ</string>
+    <string name="dialog_title">เพิ่มพัสดุ</string>
+    <string name="hint_name">ชื่อพัสดุ</string>
+    <string name="hint_tracking_code">หมายเลขติดตาม</string>
+    <string name="action_ok">ตกลง</string>
+    <string name="action_cancel">ยกเลิก</string>
+    <string name="error_empty_fields">โปรดกรอกข้อมูลทุกช่อง</string>
+    <string name="snackbar_deleted">ลบ %1$s แล้ว</string>
+    <string name="snackbar_archived">จัดเก็บ %1$s แล้ว</string>
+    <string name="action_undo">เลิกทำ</string>
+    <string name="settings_coming_soon">เร็วๆ นี้...</string>
+    <string name="status_label">สถานะ</string>
+    <string name="origin_label">ต้นทาง</string>
+    <string name="destination_label">ปลายทาง</string>
+    <string name="timeline_label">ประวัติการติดตาม</string>
+    <string name="error_fetching">เกิดข้อผิดพลาดในการดึงข้อมูล โปรดตรวจสอบการเชื่อมต่อของคุณ</string>
+    <string name="channel_background_service">บริการพื้นหลัง</string>
+    <string name="channel_package_update">อัปเดตพัสดุ</string>
+    <string name="notification_background_title">บริการพื้นหลัง</string>
+    <string name="notification_background_text">กำลังตรวจสอบสถานะการจัดส่ง</string>
+    <string name="notification_update_title">สถานะพัสดุเปลี่ยนแปลง</string>
+    <string name="settings_category_notifications">การแจ้งเตือน</string>
+    <string name="settings_sync_interval">ช่วงเวลาการซิงค์</string>
+    <string name="package_details_title">รายละเอียดพัสดุ</string>
+    <string name="back_button">กลับ</string>
+    <string name="error_title">เกิดข้อผิดพลาด</string>
+    <string name="error_no_internet">ไม่มีอินเทอร์เน็ต</string>
+    <string name="action_retry">ลองอีกครั้ง</string>
+    <string name="toast_unarchive">ยกเลิกการจัดเก็บพัสดุเพื่อดูรายละเอียด</string>
+    <string-array name="sync_intervals">
+        <item>1 ชั่วโมง</item>
+        <item>2 ชั่วโมง</item>
+        <item>3 ชั่วโมง</item>
+        <item>6 ชั่วโมง</item>
+        <item>12 ชั่วโมง</item>
+        <item>24 ชั่วโมง</item>
+    </string-array>
+</resources>

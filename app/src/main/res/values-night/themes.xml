@@ -1,0 +1,36 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <style name="Theme.CainiaoTracker" parent="Theme.Material3.DayNight.NoActionBar">
+        <!-- Primary brand color - MESMO azul #0A68F6 -->
+        <item name="colorPrimary">@color/primary_blue</item>
+        <item name="colorOnPrimary">@color/white</item>
+        <item name="colorPrimaryContainer">@color/primary_blue_light</item>
+        <item name="colorOnPrimaryContainer">@color/primary_blue_dark</item>
+
+        <!-- Secondary -->
+        <item name="colorSecondary">@color/secondary_blue_light</item>
+        <item name="colorOnSecondary">@color/black</item>
+        <item name="colorSecondaryContainer">@color/secondary_blue_dark</item>
+        <item name="colorOnSecondaryContainer">@color/white</item>
+
+        <!-- Tertiary -->
+        <item name="colorTertiary">@color/tertiary_blue_light</item>
+        <item name="colorOnTertiary">@color/black</item>
+
+        <!-- Error -->
+        <item name="colorError">@color/error_red_light</item>
+        <item name="colorOnError">@color/black</item>
+
+        <!-- Background & Surface - Escuro -->
+        <item name="android:colorBackground">@color/background_dark</item>
+        <item name="colorOnBackground">@color/white</item>
+        <item name="colorSurface">@color/surface_dark</item>
+        <item name="colorOnSurface">@color/white</item>
+        <item name="colorSurfaceVariant">@color/surface_variant_dark</item>
+        <item name="colorOnSurfaceVariant">@color/white_60</item>
+
+        <!-- StatusBar = azul, NavigationBar = surface escuro -->
+        <item name="android:statusBarColor">?attr/colorSurface</item>
+        <item name="android:navigationBarColor">?attr/colorSurface</item>
+        <item name="android:windowLightStatusBar">false</item>
+    </style>
+</resources>

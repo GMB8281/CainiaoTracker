@@ -1,0 +1,45 @@
+<resources>
+    <string name="app_name">CainiaoTracker</string>
+    <string name="title_home">Packages</string>
+    <string name="title_archived">Archived</string>
+    <string name="title_settings">Settings</string>
+    <string name="empty_state_title">No packages added</string>
+    <string name="empty_state_desc">Click \"+\" to add a package</string>
+    <string name="empty_state_archived">No archived packages</string>
+    <string name="dialog_title">Add package</string>
+    <string name="hint_name">Package name</string>
+    <string name="hint_tracking_code">Tracking code</string>
+    <string name="action_ok">OK</string>
+    <string name="action_cancel">Cancel</string>
+    <string name="error_empty_fields">Fill in all fields</string>
+    <string name="snackbar_deleted">%1$s deleted</string>
+    <string name="snackbar_archived">%1$s archived</string>
+    <string name="action_undo">UNDO</string>
+    <string name="settings_coming_soon">Coming soon...</string>
+    <string name="status_label">Status</string>
+    <string name="origin_label">Origin</string>
+    <string name="destination_label">Destination</string>
+    <string name="timeline_label">Tracking history</string>
+    <string name="error_fetching">Error fetching data. Check your connection.</string>
+    <string name="channel_background_service">Background service</string>
+    <string name="channel_package_update">Package update</string>
+    <string name="notification_background_title">Background service</string>
+    <string name="notification_background_text">Monitoring delivery status</string>
+    <string name="notification_update_title">Package status changed</string>
+    <string name="settings_category_notifications">Notifications</string>
+    <string name="settings_sync_interval">Sync interval</string>
+    <string name="package_details_title">Package details</string>
+    <string name="back_button">Back</string>
+    <string name="error_title">There was an error</string>
+    <string name="error_no_internet">No internet</string>
+    <string name="action_retry">Retry</string>
+    <string name="toast_unarchive">Unarchive the package to see details</string>
+    <string-array name="sync_intervals">
+        <item>1 hour</item>
+        <item>2 hours</item>
+        <item>3 hours</item>
+        <item>6 hours</item>
+        <item>12 hours</item>
+        <item>24 hours</item>
+    </string-array>
+</resources>

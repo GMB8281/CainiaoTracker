@@ -1,0 +1,45 @@
+<resources>
+    <string name="app_name">CainiaoTracker</string>
+    <string name="title_home">Pakketten</string>
+    <string name="title_archived">Gearchiveerd</string>
+    <string name="title_settings">Instellingen</string>
+    <string name="empty_state_title">Geen pakketten toegevoegd</string>
+    <string name="empty_state_desc">Klik op \"+\" om een pakket toe te voegen</string>
+    <string name="empty_state_archived">Geen gearchiveerde pakketten</string>
+    <string name="dialog_title">Pakket toevoegen</string>
+    <string name="hint_name">Naam pakket</string>
+    <string name="hint_tracking_code">Traceercode</string>
+    <string name="action_ok">OK</string>
+    <string name="action_cancel">Annuleren</string>
+    <string name="error_empty_fields">Vul alle velden in</string>
+    <string name="snackbar_deleted">%1$s verwijderd</string>
+    <string name="snackbar_archived">%1$s gearchiveerd</string>
+    <string name="action_undo">ONGEDAAN MAKEN</string>
+    <string name="settings_coming_soon">Binnenkort beschikbaar...</string>
+    <string name="status_label">Status</string>
+    <string name="origin_label">Oorsprong</string>
+    <string name="destination_label">Bestemming</string>
+    <string name="timeline_label">Traceergeschiedenis</string>
+    <string name="error_fetching">Fout bij ophalen van gegevens. Controleer je verbinding.</string>
+    <string name="channel_background_service">Achtergrondservice</string>
+    <string name="channel_package_update">Pakketupdate</string>
+    <string name="notification_background_title">Achtergrondservice</string>
+    <string name="notification_background_text">Bezorgstatus wordt gecontroleerd</string>
+    <string name="notification_update_title">Pakketstatus gewijzigd</string>
+    <string name="settings_category_notifications">Meldingen</string>
+    <string name="settings_sync_interval">Synchronisatie-interval</string>
+    <string name="package_details_title">Pakketdetails</string>
+    <string name="back_button">Terug</string>
+    <string name="error_title">Er is een fout opgetreden</string>
+    <string name="error_no_internet">Geen internet</string>
+    <string name="action_retry">Opnieuw proberen</string>
+    <string name="toast_unarchive">Haal het pakket uit het archief om details te zien</string>
+    <string-array name="sync_intervals">
+        <item>1 uur</item>
+        <item>2 uur</item>
+        <item>3 uur</item>
+        <item>6 uur</item>
+        <item>12 uur</item>
+        <item>24 uur</item>
+    </string-array>
+</resources>
