@@ -4,7 +4,6 @@ import android.app.NotificationChannel
 import android.app.NotificationManager
 import android.app.PendingIntent
 import android.app.Service
-import android.content.Context
 import android.content.Intent
 import android.content.pm.ServiceInfo
 import android.os.Build
@@ -28,7 +27,6 @@ class BackgroundService : Service() {
         var isRunning = false
         const val ACTION_UPDATE_INTERVAL = "com.marinov.cainiaotracker.ACTION_UPDATE_INTERVAL"
         const val EXTRA_INTERVAL = "extra_interval"
-        const val EXTRA_TRACKING_CODE = "extra_tracking_code"
         private const val PREFS_NAME = "cainiao_settings"
         private const val KEY_SYNC_INTERVAL = "sync_interval_minutes"
         private const val DEFAULT_INTERVAL = 60L  // 1 hora
@@ -52,7 +50,7 @@ class BackgroundService : Service() {
         isRunning = true
         createNotificationChannels()
 
-        val prefs = getSharedPreferences(PREFS_NAME, Context.MODE_PRIVATE)
+        val prefs = getSharedPreferences(PREFS_NAME, MODE_PRIVATE)
         currentInterval = prefs.getLong(KEY_SYNC_INTERVAL, DEFAULT_INTERVAL)
 
         startForegroundNotification()

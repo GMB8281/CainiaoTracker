@@ -68,8 +68,7 @@ class PackageActivity : AppCompatActivity() {
         showState(ViewState.LOADING)
 
         lifecycleScope.launch {
-            val result = GetTrackData.fetchTrackingInfo(this@PackageActivity, trackingCode)
-            when (result) {
+            when (val result = GetTrackData.fetchTrackingInfo(this@PackageActivity, trackingCode)) {
                 is FetchResult.Success -> {
                     TrackingCacheManager.saveTrackingInfo(this@PackageActivity, trackingCode, result.info)
                     displayTrackingInfo(result.info)

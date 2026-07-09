@@ -271,9 +271,7 @@ object GetTrackData {
     // -------------------------------------------------------------------------
     suspend fun isAnyUpdate(context: Context, trackingCode: String): UpdateResult {
         val cachedInfo = TrackingCacheManager.loadTrackingInfo(context, trackingCode)
-        val result = fetchTrackingInfo(context, trackingCode)
-
-        val newInfo = when (result) {
+        val newInfo = when (val result = fetchTrackingInfo(context, trackingCode)) {
             is FetchResult.Success -> result.info
             is FetchResult.CaptchaRequired -> {
                 // Se der captcha em background, destruímos o webview e ignoramos silenciosamente

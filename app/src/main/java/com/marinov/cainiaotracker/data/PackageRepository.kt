@@ -4,6 +4,7 @@ import android.content.Context
 import android.content.SharedPreferences
 import org.json.JSONArray
 import org.json.JSONObject
+import androidx.core.content.edit
 
 class PackageRepository(private val context: Context) {
     private val prefs: SharedPreferences = context.getSharedPreferences("cainiao_prefs", Context.MODE_PRIVATE)
@@ -37,7 +38,7 @@ class PackageRepository(private val context: Context) {
             obj.put("isArchived", pkg.isArchived)
             jsonArray.put(obj)
         }
-        prefs.edit().putString(keyPackages, jsonArray.toString()).apply()
+        prefs.edit { putString(keyPackages, jsonArray.toString()) }
     }
 
     fun addPackage(pkg: Package) {

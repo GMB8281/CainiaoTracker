@@ -11,6 +11,7 @@ import android.widget.Spinner
 import androidx.fragment.app.Fragment
 import com.marinov.cainiaotracker.R
 import com.marinov.cainiaotracker.data.BackgroundService
+import androidx.core.content.edit
 
 class SettingsFragment : Fragment() {
     private val PREFS_NAME = "cainiao_settings"
@@ -43,7 +44,7 @@ class SettingsFragment : Fragment() {
         spinner.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
             override fun onItemSelected(parent: AdapterView<*>?, view: View?, position: Int, id: Long) {
                 val minutes = intervalMap[position] ?: DEFAULT_INTERVAL
-                prefs.edit().putLong(KEY_SYNC_INTERVAL, minutes).apply()
+                prefs.edit { putLong(KEY_SYNC_INTERVAL, minutes) }
 
                 val intent = Intent(requireContext(), BackgroundService::class.java).apply {
                     action = BackgroundService.ACTION_UPDATE_INTERVAL

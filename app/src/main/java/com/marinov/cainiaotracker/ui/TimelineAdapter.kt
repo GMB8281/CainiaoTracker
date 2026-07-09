@@ -10,7 +10,7 @@ import com.marinov.cainiaotracker.data.TimelineEvent
 import com.marinov.cainiaotracker.databinding.ItemTimelineBinding
 
 class TimelineAdapter : ListAdapter<TimelineEvent, TimelineAdapter.ViewHolder>(DiffCallback()) {
-    inner class ViewHolder(val binding: ItemTimelineBinding) : RecyclerView.ViewHolder(binding.root) {
+    class ViewHolder(val binding: ItemTimelineBinding) : RecyclerView.ViewHolder(binding.root) {
         fun bind(event: TimelineEvent) {
             binding.tvTitle.text = event.title
             binding.tvTime.text = event.time
