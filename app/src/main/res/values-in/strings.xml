@@ -15,7 +15,6 @@
     <string name="snackbar_deleted">%1$s dihapus</string>
     <string name="snackbar_archived">%1$s diarsipkan</string>
     <string name="action_undo">URUNGKAN</string>
-    <string name="settings_coming_soon">Segera hadir...</string>
     <string name="status_label">Status</string>
     <string name="origin_label">Asal</string>
     <string name="destination_label">Tujuan</string>
@@ -42,4 +41,7 @@
         <item>12 jam</item>
         <item>24 jam</item>
     </string-array>
+    <string name="dialog_title_edit">Edit paket</string>
+    <string name="error_name_empty">Nama tidak boleh kosong</string>
+    <string name="error_code_empty">Kode resi tidak boleh kosong</string>
 </resources>

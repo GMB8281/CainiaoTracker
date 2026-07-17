@@ -15,7 +15,6 @@
     <string name="snackbar_deleted">%1$s silindi</string>
     <string name="snackbar_archived">%1$s arşivlendi</string>
     <string name="action_undo">GERİ AL</string>
-    <string name="settings_coming_soon">Yakında...</string>
     <string name="status_label">Durum</string>
     <string name="origin_label">Başlangıç</string>
     <string name="destination_label">Varış</string>
@@ -42,4 +41,7 @@
         <item>12 saat</item>
         <item>24 saat</item>
     </string-array>
+    <string name="dialog_title_edit">Paketi düzenle</string>
+    <string name="error_name_empty">Ad boş olamaz</string>
+    <string name="error_code_empty">Takip kodu boş olamaz</string>
 </resources>

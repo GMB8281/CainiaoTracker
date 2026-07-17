@@ -15,7 +15,6 @@
     <string name="snackbar_deleted">%1$s verwijderd</string>
     <string name="snackbar_archived">%1$s gearchiveerd</string>
     <string name="action_undo">ONGEDAAN MAKEN</string>
-    <string name="settings_coming_soon">Binnenkort beschikbaar...</string>
     <string name="status_label">Status</string>
     <string name="origin_label">Oorsprong</string>
     <string name="destination_label">Bestemming</string>
@@ -42,4 +41,7 @@
         <item>12 uur</item>
         <item>24 uur</item>
     </string-array>
+    <string name="dialog_title_edit">Pakket bewerken</string>
+    <string name="error_name_empty">Naam mag niet leeg zijn</string>
+    <string name="error_code_empty">Traceercode mag niet leeg zijn</string>
 </resources>

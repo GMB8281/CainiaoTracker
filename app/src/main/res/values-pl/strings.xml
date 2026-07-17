@@ -15,7 +15,6 @@
     <string name="snackbar_deleted">%1$s usunięto</string>
     <string name="snackbar_archived">%1$s zarchiwizowano</string>
     <string name="action_undo">COFNIJ</string>
-    <string name="settings_coming_soon">Wkrótce...</string>
     <string name="status_label">Status</string>
     <string name="origin_label">Pochodzenie</string>
     <string name="destination_label">Cel</string>
@@ -42,4 +41,7 @@
         <item>12 godzin</item>
         <item>24 godziny</item>
     </string-array>
+    <string name="dialog_title_edit">Edytuj paczkę</string>
+    <string name="error_name_empty">Nazwa nie może być pusta</string>
+    <string name="error_code_empty">Kod śledzenia nie może być pusty</string>
 </resources>

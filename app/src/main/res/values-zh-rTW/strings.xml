@@ -15,7 +15,6 @@
     <string name="snackbar_deleted">%1$s 已刪除</string>
     <string name="snackbar_archived">%1$s 已封存</string>
     <string name="action_undo">復原</string>
-    <string name="settings_coming_soon">敬請期待...</string>
     <string name="status_label">狀態</string>
     <string name="origin_label">寄件地</string>
     <string name="destination_label">目的地</string>
@@ -42,4 +41,7 @@
         <item>12 小時</item>
         <item>24 小時</item>
     </string-array>
+    <string name="dialog_title_edit">編輯包裹</string>
+    <string name="error_name_empty">名稱不能為空</string>
+    <string name="error_code_empty">追蹤號碼不能為空</string>
 </resources>

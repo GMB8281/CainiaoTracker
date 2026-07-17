@@ -15,7 +15,6 @@
     <string name="snackbar_deleted">%1$s 삭제됨</string>
     <string name="snackbar_archived">%1$s 보관됨</string>
     <string name="action_undo">실행 취소</string>
-    <string name="settings_coming_soon">곧 제공 예정...</string>
     <string name="status_label">상태</string>
     <string name="origin_label">출발지</string>
     <string name="destination_label">도착지</string>
@@ -42,4 +41,7 @@
         <item>12시간</item>
         <item>24시간</item>
     </string-array>
+    <string name="dialog_title_edit">패키지 편집</string>
+    <string name="error_name_empty">이름은 비워 둘 수 없습니다</string>
+    <string name="error_code_empty">배송 조회 번호는 비워 둘 수 없습니다</string>
 </resources>

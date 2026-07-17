@@ -15,7 +15,6 @@
     <string name="snackbar_deleted">ลบ %1$s แล้ว</string>
     <string name="snackbar_archived">จัดเก็บ %1$s แล้ว</string>
     <string name="action_undo">เลิกทำ</string>
-    <string name="settings_coming_soon">เร็วๆ นี้...</string>
     <string name="status_label">สถานะ</string>
     <string name="origin_label">ต้นทาง</string>
     <string name="destination_label">ปลายทาง</string>
@@ -42,4 +41,7 @@
         <item>12 ชั่วโมง</item>
         <item>24 ชั่วโมง</item>
     </string-array>
+    <string name="dialog_title_edit">แก้ไขพัสดุ</string>
+    <string name="error_name_empty">ชื่อต้องไม่ว่างเปล่า</string>
+    <string name="error_code_empty">หมายเลขติดตามต้องไม่ว่างเปล่า</string>
 </resources>

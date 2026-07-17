@@ -19,8 +19,6 @@
     <string name="snackbar_archived">%1$s arquivado</string>
     <string name="action_undo">DESFAZER</string>
 
-    <string name="settings_coming_soon">Em breve...</string>
-
     <string name="status_label">Status</string>
     <string name="origin_label">Origem</string>
     <string name="destination_label">Destino</string>
@@ -53,4 +51,7 @@
         <item>12 horas</item>
         <item>24 horas</item>
     </string-array>
+    <string name="dialog_title_edit">Editar pacote</string>
+    <string name="error_name_empty">O nome não pode ficar em branco</string>
+    <string name="error_code_empty">O código de rastreio não pode ficar em branco</string>
 </resources>

@@ -15,7 +15,6 @@
     <string name="snackbar_deleted">%1$s deleted</string>
     <string name="snackbar_archived">%1$s archived</string>
     <string name="action_undo">UNDO</string>
-    <string name="settings_coming_soon">Coming soon...</string>
     <string name="status_label">Status</string>
     <string name="origin_label">Origin</string>
     <string name="destination_label">Destination</string>
@@ -42,4 +41,7 @@
         <item>12 hours</item>
         <item>24 hours</item>
     </string-array>
+    <string name="dialog_title_edit">Edit parcel</string>
+    <string name="error_name_empty">Name cannot be empty</string>
+    <string name="error_code_empty">Tracking code cannot be empty</string>
 </resources>

@@ -15,7 +15,6 @@
     <string name="snackbar_deleted">Đã xóa %1$s</string>
     <string name="snackbar_archived">Đã lưu trữ %1$s</string>
     <string name="action_undo">HOÀN TÁC</string>
-    <string name="settings_coming_soon">Sắp ra mắt...</string>
     <string name="status_label">Trạng thái</string>
     <string name="origin_label">Nơi gửi</string>
     <string name="destination_label">Nơi đến</string>
@@ -42,4 +41,7 @@
         <item>12 giờ</item>
         <item>24 giờ</item>
     </string-array>
+    <string name="dialog_title_edit">Chỉnh sửa gói hàng</string>
+    <string name="error_name_empty">Tên không được để trống</string>
+    <string name="error_code_empty">Mã theo dõi không được để trống</string>
 </resources>

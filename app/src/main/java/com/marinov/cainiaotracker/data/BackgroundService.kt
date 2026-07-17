@@ -7,9 +7,7 @@ import android.app.Service
 import android.content.Intent
 import android.content.pm.ServiceInfo
 import android.os.Build
-import android.os.Handler
 import android.os.IBinder
-import android.os.Looper
 import androidx.core.app.NotificationCompat
 import androidx.core.app.NotificationManagerCompat
 import com.marinov.cainiaotracker.R
@@ -19,6 +17,8 @@ import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.SupervisorJob
 import kotlinx.coroutines.cancel
+import kotlinx.coroutines.delay
+import kotlinx.coroutines.isActive
 import kotlinx.coroutines.launch
 
 class BackgroundService : Service() {
@@ -32,29 +32,27 @@ class BackgroundService : Service() {
         private const val DEFAULT_INTERVAL = 60L  // 1 hora
     }
 
-    private val handler = Handler(Looper.getMainLooper())
     private var currentInterval = DEFAULT_INTERVAL
     private val serviceScope = CoroutineScope(Dispatchers.IO + SupervisorJob())
-
-    private val checkRunnable = object : Runnable {
-        override fun run() {
-            serviceScope.launch {
-                checkForUpdates()
-            }
-            handler.postDelayed(this, currentInterval * 60 * 1000)
-        }
-    }
 
     override fun onCreate() {
         super.onCreate()
         isRunning = true
         createNotificationChannels()
-
         val prefs = getSharedPreferences(PREFS_NAME, MODE_PRIVATE)
         currentInterval = prefs.getLong(KEY_SYNC_INTERVAL, DEFAULT_INTERVAL)
-
         startForegroundNotification()
-        handler.post(checkRunnable)
+
+        // Inicia o loop de verificação em background
+        serviceScope.launch {
+            // isActive garante que o loop pare se o serviceScope for cancelado (onDestroy)
+            while (isActive) {
+                checkForUpdates()
+                // O delay só acontece DEPOIS que toda a lista de encomendas for verificada.
+                // Isso impede a sobreposição de ciclos.
+                delay(currentInterval * 60 * 1000)
+            }
+        }
     }
 
     override fun onStartCommand(intent: Intent?, flags: Int, startId: Int): Int {
@@ -62,8 +60,7 @@ class BackgroundService : Service() {
             val newInterval = intent.getLongExtra(EXTRA_INTERVAL, DEFAULT_INTERVAL)
             if (newInterval != currentInterval) {
                 currentInterval = newInterval
-                handler.removeCallbacks(checkRunnable)
-                handler.post(checkRunnable)
+                // O novo intervalo será lido automaticamente na próxima iteração do loop
             }
         }
         return START_STICKY
@@ -93,7 +90,10 @@ class BackgroundService : Service() {
         val repository = PackageRepository(applicationContext)
         val packages = repository.getAllPackages().filter { !it.isArchived }
 
-        for (pkg in packages) {
+        for ((index, pkg) in packages.withIndex()) {
+            // Verifica se o escopo ainda está ativo (ex: se o serviço foi destruído no meio do ciclo)
+            if (!serviceScope.isActive) break
+
             try {
                 // Pula encomendas que estão sendo visualizadas no momento
                 if (ActiveViewingManager.isViewing(pkg.trackingCode)) {
@@ -106,6 +106,15 @@ class BackgroundService : Service() {
                 }
             } catch (e: Exception) {
                 e.printStackTrace()
+            }
+
+            // Lógica de delay para evitar Captcha
+            if (index < packages.lastIndex) {
+                if ((index + 1) % 3 == 0) {
+                    delay(5 * 60 * 1000) // Espera 5 minutos antes do próximo grupo de 3
+                } else {
+                    delay(30 * 1000) // Espera 30 segundos entre encomendas do mesmo grupo
+                }
             }
         }
     }
@@ -142,7 +151,7 @@ class BackgroundService : Service() {
     override fun onDestroy() {
         super.onDestroy()
         isRunning = false
-        handler.removeCallbacks(checkRunnable)
+        // Cancela o escopo, o que faz o `isActive` do loop virar false e encerra a corrotina gracefully
         serviceScope.cancel()
     }
 

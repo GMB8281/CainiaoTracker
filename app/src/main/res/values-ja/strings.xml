@@ -15,7 +15,6 @@
     <string name="snackbar_deleted">%1$s を削除しました</string>
     <string name="snackbar_archived">%1$s をアーカイブしました</string>
     <string name="action_undo">元に戻す</string>
-    <string name="settings_coming_soon">近日公開...</string>
     <string name="status_label">ステータス</string>
     <string name="origin_label">発送元</string>
     <string name="destination_label">お届け先</string>
@@ -42,4 +41,7 @@
         <item>12 時間</item>
         <item>24 時間</item>
     </string-array>
+    <string name="dialog_title_edit">荷物を編集</string>
+    <string name="error_name_empty">名前は空にできません</string>
+    <string name="error_code_empty">追跡番号は空にできません</string>
 </resources>

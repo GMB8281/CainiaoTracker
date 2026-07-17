@@ -15,7 +15,6 @@
     <string name="snackbar_deleted">%1$s supprimé</string>
     <string name="snackbar_archived">%1$s archivé</string>
     <string name="action_undo">ANNULER</string>
-    <string name="settings_coming_soon">Bientôt disponible...</string>
     <string name="status_label">Statut</string>
     <string name="origin_label">Origine</string>
     <string name="destination_label">Destination</string>
@@ -42,4 +41,7 @@
         <item>12 heures</item>
         <item>24 heures</item>
     </string-array>
+    <string name="dialog_title_edit">Modifier le colis</string>
+    <string name="error_name_empty">Le nom ne peut pas être vide</string>
+    <string name="error_code_empty">Le numéro de suivi ne peut pas être vide</string>
 </resources>

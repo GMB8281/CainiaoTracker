@@ -15,7 +15,6 @@
     <string name="snackbar_deleted">%1$s हटा दिया गया</string>
     <string name="snackbar_archived">%1$s संग्रहीत किया गया</string>
     <string name="action_undo">पूर्ववत करें</string>
-    <string name="settings_coming_soon">जल्द आ रहा है...</string>
     <string name="status_label">स्थिति</string>
     <string name="origin_label">उत्पत्ति</string>
     <string name="destination_label">गंतव्य</string>
@@ -42,4 +41,7 @@
         <item>12 घंटे</item>
         <item>24 घंटे</item>
     </string-array>
+    <string name="dialog_title_edit">पैकेज संपादित करें</string>
+    <string name="error_name_empty">नाम खाली नहीं हो सकता</string>
+    <string name="error_code_empty">ट्रैकिंग कोड खाली नहीं हो सकता</string>
 </resources>

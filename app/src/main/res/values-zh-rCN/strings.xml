@@ -15,7 +15,6 @@
     <string name="snackbar_deleted">%1$s 已删除</string>
     <string name="snackbar_archived">%1$s 已归档</string>
     <string name="action_undo">撤销</string>
-    <string name="settings_coming_soon">敬请期待...</string>
     <string name="status_label">状态</string>
     <string name="origin_label">发件地</string>
     <string name="destination_label">目的地</string>
@@ -42,4 +41,7 @@
         <item>12 小时</item>
         <item>24 小时</item>
     </string-array>
+    <string name="dialog_title_edit">编辑包裹</string>
+    <string name="error_name_empty">名称不能为空</string>
+    <string name="error_code_empty">运单号不能为空</string>
 </resources>

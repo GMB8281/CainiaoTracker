@@ -15,7 +15,6 @@
     <string name="snackbar_deleted">%1$s удалено</string>
     <string name="snackbar_archived">%1$s в архиве</string>
     <string name="action_undo">ОТМЕНИТЬ</string>
-    <string name="settings_coming_soon">Скоро...</string>
     <string name="status_label">Статус</string>
     <string name="origin_label">Откуда</string>
     <string name="destination_label">Куда</string>
@@ -42,4 +41,7 @@
         <item>12 часов</item>
         <item>24 часа</item>
     </string-array>
+    <string name="dialog_title_edit">Редактировать посылку</string>
+    <string name="error_name_empty">Название не может быть пустым</string>
+    <string name="error_code_empty">Трек-номер не может быть пустым</string>
 </resources>

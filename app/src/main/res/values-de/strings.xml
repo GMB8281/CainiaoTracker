@@ -15,7 +15,6 @@
     <string name="snackbar_deleted">%1$s gelöscht</string>
     <string name="snackbar_archived">%1$s archiviert</string>
     <string name="action_undo">RÜCKGÄNGIG</string>
-    <string name="settings_coming_soon">Demnächst...</string>
     <string name="status_label">Status</string>
     <string name="origin_label">Herkunft</string>
     <string name="destination_label">Ziel</string>
@@ -42,4 +41,7 @@
         <item>12 Stunden</item>
         <item>24 Stunden</item>
     </string-array>
+    <string name="dialog_title_edit">Paket bearbeiten</string>
+    <string name="error_name_empty">Name darf nicht leer sein</string>
+    <string name="error_code_empty">Sendungsnummer darf nicht leer sein</string>
 </resources>

@@ -15,7 +15,6 @@
     <string name="snackbar_deleted">تم حذف %1$s</string>
     <string name="snackbar_archived">تم أرشفة %1$s</string>
     <string name="action_undo">تراجع</string>
-    <string name="settings_coming_soon">قريباً...</string>
     <string name="status_label">الحالة</string>
     <string name="origin_label">المصدر</string>
     <string name="destination_label">الوجهة</string>
@@ -42,4 +41,7 @@
         <item>12 ساعة</item>
         <item>24 ساعة</item>
     </string-array>
+    <string name="dialog_title_edit">تعديل الطرد</string>
+    <string name="error_name_empty">لا يمكن أن يكون الاسم فارغاً</string>
+    <string name="error_code_empty">لا يمكن أن يكون رقم التتبع فارغاً</string>
 </resources>
