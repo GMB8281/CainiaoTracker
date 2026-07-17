@@ -4,7 +4,7 @@
     <string name="title_archived">Архив</string>
     <string name="title_settings">Настройки</string>
     <string name="empty_state_title">Нет добавленных посылок</string>
-    <string name="empty_state_desc">Нажмите \"+\", чтобы добавить посылку</string>
+    <string name="empty_state_desc">Нажмите "+", чтобы добавить посылку. \n Доставленные посылки архивируются автоматически.</string>
     <string name="empty_state_archived">Нет архивных посылок</string>
     <string name="dialog_title">Добавить посылку</string>
     <string name="hint_name">Название посылки</string>

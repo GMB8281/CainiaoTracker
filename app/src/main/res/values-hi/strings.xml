@@ -4,7 +4,7 @@
     <string name="title_archived">संग्रहीत</string>
     <string name="title_settings">सेटिंग्स</string>
     <string name="empty_state_title">कोई पैकेज नहीं जोड़ा गया</string>
-    <string name="empty_state_desc">पैकेज जोड़ने के लिए \"+\" पर क्लिक करें</string>
+    <string name="empty_state_desc">पैकेज जोड़ने के लिए "+" पर क्लिक करें। \n डिलीवर किए गए पैकेज अपने आप संग्रहीत हो जाते हैं。</string>
     <string name="empty_state_archived">कोई संग्रहीत पैकेज नहीं</string>
     <string name="dialog_title">पैकेज जोड़ें</string>
     <string name="hint_name">पैकेज का नाम</string>

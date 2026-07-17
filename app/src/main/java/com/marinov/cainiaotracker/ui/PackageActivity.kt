@@ -12,6 +12,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.marinov.cainiaotracker.R
 import com.marinov.cainiaotracker.data.FetchResult
 import com.marinov.cainiaotracker.data.GetTrackData
+import com.marinov.cainiaotracker.data.PackageRepository
 import com.marinov.cainiaotracker.data.TrackingCacheManager
 import com.marinov.cainiaotracker.data.TrackingInfo
 import com.marinov.cainiaotracker.databinding.ActivityPackageBinding
@@ -66,16 +67,27 @@ class PackageActivity : AppCompatActivity() {
         }
 
         showState(ViewState.LOADING)
-
         lifecycleScope.launch {
             when (val result = GetTrackData.fetchTrackingInfo(this@PackageActivity, trackingCode)) {
                 is FetchResult.Success -> {
                     TrackingCacheManager.saveTrackingInfo(this@PackageActivity, trackingCode, result.info)
                     displayTrackingInfo(result.info)
                     showState(ViewState.SUCCESS)
+
+                    // Auto-arquivamento discreto se entregue
+                    val deliveredStatuses = listOf("delivered", "妥投", "livré", "entregue")
+                    val isDelivered = deliveredStatuses.any { it.equals(result.info.status.trim(), ignoreCase = true) }
+                    if (isDelivered) {
+                        val repository = PackageRepository(this@PackageActivity)
+                        val packages = repository.getAllPackages()
+                        val pkg = packages.find { it.trackingCode == trackingCode }
+                        if (pkg != null && !pkg.isArchived) {
+                            pkg.isArchived = true
+                            repository.updatePackage(pkg)
+                        }
+                    }
                 }
                 is FetchResult.CaptchaRequired -> {
-                    // Exibe o WebView APENAS se a PackageActivity estiver aberta.
                     showCaptchaOverlay(result.webView)
                 }
                 is FetchResult.Error -> {
@@ -94,9 +106,7 @@ class PackageActivity : AppCompatActivity() {
 
     private fun showCaptchaOverlay(webView: WebView) {
         captchaWebView = webView
-
         (webView.parent as? ViewGroup)?.removeView(webView)
-
         binding.layoutCaptcha.addView(
             webView,
             ViewGroup.LayoutParams(
@@ -104,25 +114,18 @@ class PackageActivity : AppCompatActivity() {
                 ViewGroup.LayoutParams.MATCH_PARENT
             )
         )
-
         binding.layoutCaptcha.visibility = View.VISIBLE
         binding.progressBar.visibility = View.GONE
         binding.layoutError.visibility = View.GONE
         binding.layoutOffline.visibility = View.GONE
         binding.layoutContent.visibility = View.GONE
 
-        // Interface JS para receber o callback quando os elementos do captcha sumirem
         webView.addJavascriptInterface(object {
             @JavascriptInterface
             fun onCaptchaResolved() {
                 runOnUiThread {
-                    // 1. Força salvamento dos cookies do captcha agora resolvido
                     CookieManager.getInstance().flush()
-
-                    // 2. Some com o WebView imediatamente
                     hideCaptchaOverlay()
-
-                    // 3. Faz uma nova requisição para pegar os dados com o cookie já autenticado
                     fetchTracking()
                 }
             }
@@ -136,24 +139,18 @@ class PackageActivity : AppCompatActivity() {
             }
         }, "AndroidInterfaceCaptcha")
 
-        // NOVO: Adiciona um WebViewClient dedicado ao monitoramento de captcha.
-        // Se o captcha recarregar a página pós-sucesso (redirecionamento), reinjetamos o script.
         webView.webViewClient = object : android.webkit.WebViewClient() {
             override fun onPageFinished(view: WebView?, url: String?) {
                 super.onPageFinished(view, url)
                 view?.evaluateJavascript(GetTrackData.buildMonitoringJs(), null)
             }
         }
-
-        // Injeta o script de monitoramento contínuo na página atual de imediato
         webView.evaluateJavascript(GetTrackData.buildMonitoringJs(), null)
     }
 
     private fun hideCaptchaOverlay() {
         binding.layoutCaptcha.visibility = View.GONE
-
         captchaWebView?.let { webView ->
-            // Remove the WebViewClient to prevent memory leaks or unwanted calls
             webView.webViewClient = android.webkit.WebViewClient()
             (webView.parent as? ViewGroup)?.removeView(webView)
             webView.stopLoading()

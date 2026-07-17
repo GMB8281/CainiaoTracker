@@ -4,7 +4,7 @@
     <string name="title_archived">已归档</string>
     <string name="title_settings">设置</string>
     <string name="empty_state_title">未添加任何包裹</string>
-    <string name="empty_state_desc">点击 \"+\" 添加包裹</string>
+    <string name="empty_state_desc">点击 "+" 添加包裹。\n 已送达的包裹会自动归档。</string>
     <string name="empty_state_archived">没有已归档的包裹</string>
     <string name="dialog_title">添加包裹</string>
     <string name="hint_name">包裹名称</string>

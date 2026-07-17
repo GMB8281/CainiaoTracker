@@ -4,7 +4,7 @@
     <string name="title_archived">จัดเก็บแล้ว</string>
     <string name="title_settings">การตั้งค่า</string>
     <string name="empty_state_title">ยังไม่ได้เพิ่มพัสดุ</string>
-    <string name="empty_state_desc">คลิก \"+\" เพื่อเพิ่มพัสดุ</string>
+    <string name="empty_state_desc">คลิก "+" เพื่อเพิ่มพัสดุ \n พัสดุที่จัดส่งแล้วจะถูกจัดเก็บโดยอัตโนมัติ</string>
     <string name="empty_state_archived">ไม่มีพัสดุที่จัดเก็บ</string>
     <string name="dialog_title">เพิ่มพัสดุ</string>
     <string name="hint_name">ชื่อพัสดุ</string>

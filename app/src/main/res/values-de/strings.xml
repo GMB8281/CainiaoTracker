@@ -4,7 +4,7 @@
     <string name="title_archived">Archiviert</string>
     <string name="title_settings">Einstellungen</string>
     <string name="empty_state_title">Keine Pakete hinzugefügt</string>
-    <string name="empty_state_desc">Klicken Sie auf \"+\", um ein Paket hinzuzufügen</string>
+    <string name="empty_state_desc">Klicken Sie auf "+", um ein Paket hinzuzufügen. \n Gelieferte Pakete werden automatisch archiviert.</string>
     <string name="empty_state_archived">Keine archivierten Pakete</string>
     <string name="dialog_title">Paket hinzufügen</string>
     <string name="hint_name">Paketname</string>

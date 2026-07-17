@@ -4,7 +4,7 @@
     <string name="title_archived">Gearchiveerd</string>
     <string name="title_settings">Instellingen</string>
     <string name="empty_state_title">Geen pakketten toegevoegd</string>
-    <string name="empty_state_desc">Klik op \"+\" om een pakket toe te voegen</string>
+    <string name="empty_state_desc">Klik op "+" om een pakket toe te voegen. \n Bezorgde pakketten worden automatisch gearchiveerd.</string>
     <string name="empty_state_archived">Geen gearchiveerde pakketten</string>
     <string name="dialog_title">Pakket toevoegen</string>
     <string name="hint_name">Naam pakket</string>

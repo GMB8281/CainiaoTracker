@@ -4,7 +4,7 @@
     <string name="title_archived">Diarsipkan</string>
     <string name="title_settings">Pengaturan</string>
     <string name="empty_state_title">Belum ada paket yang ditambahkan</string>
-    <string name="empty_state_desc">Klik \"+\" untuk menambahkan paket</string>
+    <string name="empty_state_desc">Klik "+" untuk menambahkan paket. \n Paket yang terkirim akan otomatis diarsipkan.</string>
     <string name="empty_state_archived">Tidak ada paket yang diarsipkan</string>
     <string name="dialog_title">Tambah paket</string>
     <string name="hint_name">Nama paket</string>

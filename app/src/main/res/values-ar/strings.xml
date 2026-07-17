@@ -4,7 +4,7 @@
     <string name="title_archived">المؤرشفة</string>
     <string name="title_settings">الإعدادات</string>
     <string name="empty_state_title">لم يتم إضافة أي طرود</string>
-    <string name="empty_state_desc">انقر على \"+\" لإضافة طرد</string>
+    <string name="empty_state_desc">انقر على "+" لإضافة طرد. \n يتم أرشفة الطرود المستلمة تلقائياً.</string>
     <string name="empty_state_archived">لا توجد طرود مؤرشفة</string>
     <string name="dialog_title">إضافة طرد</string>
     <string name="hint_name">اسم الطرد</string>

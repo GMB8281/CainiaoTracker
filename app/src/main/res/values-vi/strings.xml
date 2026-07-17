@@ -4,7 +4,7 @@
     <string name="title_archived">Đã lưu trữ</string>
     <string name="title_settings">Cài đặt</string>
     <string name="empty_state_title">Chưa có gói hàng nào</string>
-    <string name="empty_state_desc">Nhấp vào \"+\" để thêm gói hàng</string>
+    <string name="empty_state_desc">Nhấp vào "+" để thêm gói hàng. \n Các gói hàng đã giao sẽ được tự động lưu trữ.</string>
     <string name="empty_state_archived">Không có gói hàng lưu trữ</string>
     <string name="dialog_title">Thêm gói hàng</string>
     <string name="hint_name">Tên gói hàng</string>

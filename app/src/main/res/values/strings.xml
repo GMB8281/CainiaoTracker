@@ -4,7 +4,7 @@
     <string name="title_archived">Archived</string>
     <string name="title_settings">Settings</string>
     <string name="empty_state_title">No packages added</string>
-    <string name="empty_state_desc">Click \"+\" to add a package</string>
+    <string name="empty_state_desc">Click "+" to add a package. \n Delivered packages are auto archived.</string>
     <string name="empty_state_archived">No archived packages</string>
     <string name="dialog_title">Add package</string>
     <string name="dialog_title_edit">Edit package</string>

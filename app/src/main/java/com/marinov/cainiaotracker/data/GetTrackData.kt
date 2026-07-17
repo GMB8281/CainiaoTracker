@@ -22,7 +22,6 @@ sealed class FetchResult {
 }
 
 object GetTrackData {
-
     private const val CAINIAO_URL_TEMPLATE =
         "https://global.cainiao.com/newDetail.htm?mailNoList=%s&otherMailNoList="
 
@@ -33,7 +32,6 @@ object GetTrackData {
                 suspendCancellableCoroutine<FetchResult> { continuation ->
                     val webView = WebView(context)
                     setupWebViewForDetection(webView, continuation)
-
                     webView.loadUrl(String.format(CAINIAO_URL_TEMPLATE, trackingCode))
 
                     continuation.invokeOnCancellation {
@@ -60,22 +58,18 @@ object GetTrackData {
             "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 " +
                     "(KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36"
 
-        // Cookies persistentes
         val cookieManager = CookieManager.getInstance()
         cookieManager.setAcceptCookie(true)
         cookieManager.setAcceptThirdPartyCookies(webView, true)
 
         var isResumed = false
-
         webView.addJavascriptInterface(object {
             @JavascriptInterface
             fun onDataExtracted(json: String) {
                 if (isResumed) return
                 isResumed = true
                 try {
-                    // Força a gravação dos cookies válidos
                     CookieManager.getInstance().flush()
-
                     val info = parseTrackingJson(json)
                     if (continuation.isActive) continuation.resume(FetchResult.Success(info))
                 } catch (e: Exception) {
@@ -111,7 +105,6 @@ object GetTrackData {
         webView.webViewClient = object : WebViewClient() {
             override fun onPageFinished(view: WebView?, url: String?) {
                 super.onPageFinished(view, url)
-                // Injeta o verificador após a página carregar
                 view?.evaluateJavascript(buildDetectionJs(), null)
             }
         }
@@ -137,9 +130,6 @@ object GetTrackData {
         return TrackingInfo(status, origin, destination, timeline)
     }
 
-    // -------------------------------------------------------------------------
-    // JS de detecção inicial
-    // -------------------------------------------------------------------------
     private fun buildDetectionJs(): String {
         return """
             (function checkState() {
@@ -147,22 +137,18 @@ object GetTrackData {
                 var punishEl = document.querySelector('#baxia-punish');
                 var noCaptchaEl = document.getElementById('nocaptcha');
                 var hasCaptcha = false;
-
                 if (punishEl) hasCaptcha = true;
                 if (noCaptchaEl) hasCaptcha = true;
-
                 if (warningEl) {
                     var text = (warningEl.innerText || warningEl.textContent || '').toLowerCase();
                     if (text.indexOf('unusual traffic') !== -1 || text.indexOf('sorry') !== -1) {
                         hasCaptcha = true;
                     }
                 }
-
                 if (hasCaptcha) {
                     try { AndroidInterface.onCaptchaDetected(); } catch(e) {}
                     return;
                 }
-
                 var el = document.querySelector('.Tracking--cardWrapper--2SqX2e3');
                 if (el) {
                     try {
@@ -178,20 +164,14 @@ object GetTrackData {
         """.trimIndent()
     }
 
-    // -------------------------------------------------------------------------
-    // JS de monitoramento: Usando setInterval para checar quando as divs sumirem
-    // -------------------------------------------------------------------------
     fun buildMonitoringJs(): String {
         return """
             (function monitorCaptchaResolution() {
-                // Evita múltiplos intervalos rodando simultaneamente
                 if (window.captchaMonitorInterval) {
                     clearInterval(window.captchaMonitorInterval);
                 }
-
-                var maxAttempts = 600; // ~10 minutos
+                var maxAttempts = 600; 
                 var attempts = 0;
-
                 window.captchaMonitorInterval = setInterval(function() {
                     attempts++;
                     if (attempts > maxAttempts) {
@@ -199,24 +179,18 @@ object GetTrackData {
                         try { AndroidInterfaceCaptcha.onTimeout(); } catch(e) {}
                         return;
                     }
-
                     var warningEl = document.querySelector('.warnning-text');
                     var punishEl = document.querySelector('#baxia-punish');
-                    var noCaptchaEl = document.getElementById('nocaptcha'); // O slider do HTML enviado
+                    var noCaptchaEl = document.getElementById('nocaptcha'); 
                     var hasCaptcha = false;
-
-                    // Verifica a existência e se estão visíveis na tela (offsetWidth > 0)
                     if (punishEl && punishEl.offsetWidth > 0) hasCaptcha = true;
                     if (noCaptchaEl && noCaptchaEl.offsetWidth > 0) hasCaptcha = true;
-
                     if (warningEl && warningEl.offsetWidth > 0) {
                         var text = (warningEl.innerText || warningEl.textContent || '').toLowerCase();
                         if (text.indexOf('unusual traffic') !== -1 || text.indexOf('sorry') !== -1) {
                             hasCaptcha = true;
                         }
                     }
-
-                    // Se NENHUM dos elementos do captcha for encontrado e visível, ele sumiu!
                     if (!hasCaptcha) {
                         clearInterval(window.captchaMonitorInterval);
                         try { AndroidInterfaceCaptcha.onCaptchaResolved(); } catch(e) {}
@@ -226,9 +200,6 @@ object GetTrackData {
         """.trimIndent()
     }
 
-    // -------------------------------------------------------------------------
-    // Código JS de extração
-    // -------------------------------------------------------------------------
     private fun buildExtractionCode(): String {
         return """
             var statusEl = document.querySelector('.Tracking--orderContent--1xRvpXS .Tracking--orderCode--2xCNBKX > span');
@@ -266,15 +237,11 @@ object GetTrackData {
         """.trimIndent()
     }
 
-    // -------------------------------------------------------------------------
-    // Verificação de atualização (BackgroundService)
-    // -------------------------------------------------------------------------
     suspend fun isAnyUpdate(context: Context, trackingCode: String): UpdateResult {
         val cachedInfo = TrackingCacheManager.loadTrackingInfo(context, trackingCode)
         val newInfo = when (val result = fetchTrackingInfo(context, trackingCode)) {
             is FetchResult.Success -> result.info
             is FetchResult.CaptchaRequired -> {
-                // Se der captcha em background, destruímos o webview e ignoramos silenciosamente
                 result.webView.post {
                     result.webView.stopLoading()
                     result.webView.destroy()
@@ -284,13 +251,13 @@ object GetTrackData {
             is FetchResult.Error -> null
         }
 
-        if (newInfo == null || newInfo.timeline.isEmpty()) {
-            return UpdateResult(false, "")
-        }
+        val status = newInfo?.status ?: ""
 
+        if (newInfo == null || newInfo.timeline.isEmpty()) {
+            return UpdateResult(false, "", status)
+        }
         var hasUpdate = false
         var latestTitle = ""
-
         if (cachedInfo == null || cachedInfo.timeline.isEmpty()) {
             hasUpdate = false
         } else {
@@ -303,8 +270,7 @@ object GetTrackData {
                 }
             }
         }
-
         TrackingCacheManager.saveTrackingInfo(context, trackingCode, newInfo)
-        return UpdateResult(hasUpdate, latestTitle)
+        return UpdateResult(hasUpdate, latestTitle, status)
     }
 }

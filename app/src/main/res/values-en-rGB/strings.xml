@@ -4,7 +4,7 @@
     <string name="title_archived">Archived</string>
     <string name="title_settings">Settings</string>
     <string name="empty_state_title">No parcels added</string>
-    <string name="empty_state_desc">Click \"+\" to add a parcel</string>
+    <string name="empty_state_desc">Click "+" to add a parcel. \n Delivered parcels are auto archived.</string>
     <string name="empty_state_archived">No archived parcels</string>
     <string name="dialog_title">Add parcel</string>
     <string name="hint_name">Parcel name</string>

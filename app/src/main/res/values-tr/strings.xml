@@ -4,7 +4,7 @@
     <string name="title_archived">Arşivlenenler</string>
     <string name="title_settings">Ayarlar</string>
     <string name="empty_state_title">Eklenen paket yok</string>
-    <string name="empty_state_desc">Bir paket eklemek için \"+\" simgesine tıklayın</string>
+    <string name="empty_state_desc">Bir paket eklemek için "+" simgesine tıklayın. \n Teslim edilen paketler otomatik olarak arşivlenir.</string>
     <string name="empty_state_archived">Arşivlenmiş paket yok</string>
     <string name="dialog_title">Paket ekle</string>
     <string name="hint_name">Paket adı</string>

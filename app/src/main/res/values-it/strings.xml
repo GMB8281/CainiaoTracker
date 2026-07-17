@@ -4,7 +4,7 @@
     <string name="title_archived">Archiviati</string>
     <string name="title_settings">Impostazioni</string>
     <string name="empty_state_title">Nessun pacco aggiunto</string>
-    <string name="empty_state_desc">Clicca su \"+\" per aggiungere un pacco</string>
+    <string name="empty_state_desc">Clicca su "+" per aggiungere un pacco. \n I pacchi consegnati vengono archiviati automaticamente.</string>
     <string name="empty_state_archived">Nessun pacco archiviato</string>
     <string name="dialog_title">Aggiungi pacco</string>
     <string name="hint_name">Nome del pacco</string>

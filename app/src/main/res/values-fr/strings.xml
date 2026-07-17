@@ -4,7 +4,7 @@
     <string name="title_archived">Archivés</string>
     <string name="title_settings">Paramètres</string>
     <string name="empty_state_title">Aucun colis ajouté</string>
-    <string name="empty_state_desc">Cliquez sur \"+\" pour ajouter un colis</string>
+    <string name="empty_state_desc">Cliquez sur "+" pour ajouter un colis. \n Les colis livrés sont automatiquement archivés.</string>
     <string name="empty_state_archived">Aucun colis archivé</string>
     <string name="dialog_title">Ajouter un colis</string>
     <string name="hint_name">Nom du colis</string>

@@ -4,7 +4,7 @@
     <string name="title_archived">アーカイブ済み</string>
     <string name="title_settings">設定</string>
     <string name="empty_state_title">荷物が追加されていません</string>
-    <string name="empty_state_desc">「+」をクリックして荷物を追加してください</string>
+    <string name="empty_state_desc">「+」をクリックして荷物を追加してください。\n 配達済みの荷物は自動的にアーカイブされます。</string>
     <string name="empty_state_archived">アーカイブ済みの荷物はありません</string>
     <string name="dialog_title">荷物を追加</string>
     <string name="hint_name">荷物の名前</string>

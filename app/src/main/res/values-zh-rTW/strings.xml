@@ -4,7 +4,7 @@
     <string name="title_archived">已封存</string>
     <string name="title_settings">設定</string>
     <string name="empty_state_title">未新增任何包裹</string>
-    <string name="empty_state_desc">點擊 \"+\" 新增包裹</string>
+    <string name="empty_state_desc">點擊 "+" 新增包裹。\n 已送達的包裹會自動封存。</string>
     <string name="empty_state_archived">沒有已封存的包裹</string>
     <string name="dialog_title">新增包裹</string>
     <string name="hint_name">包裹名稱</string>

@@ -22,7 +22,6 @@ data class TrackingInfo(
     val destination: String,
     val timeline: List<TimelineEvent>
 ) {
-    // Converte o objeto para JSONObject para salvar no arquivo
     fun toJson(): JSONObject {
         val json = JSONObject()
         json.put("status", status)
@@ -41,10 +40,9 @@ data class TrackingInfo(
     }
 }
 
-// Classe de retorno para a função de verificação de atualizações
-data class UpdateResult(val hasUpdate: Boolean, val latestTitle: String)
+// Adicionado o campo 'status' para permitir o auto-arquivamento
+data class UpdateResult(val hasUpdate: Boolean, val latestTitle: String, val status: String = "")
 
-// Extensão para converter o JSON lido do arquivo de volta para o objeto
 fun JSONObject.toTrackingInfo(): TrackingInfo {
     val status = optString("status", "")
     val origin = optString("origin", "")

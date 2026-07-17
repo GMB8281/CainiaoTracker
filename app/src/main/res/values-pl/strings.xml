@@ -4,7 +4,7 @@
     <string name="title_archived">Zarchiwizowane</string>
     <string name="title_settings">Ustawienia</string>
     <string name="empty_state_title">Brak dodanych paczek</string>
-    <string name="empty_state_desc">Kliknij \"+\", aby dodać paczkę</string>
+    <string name="empty_state_desc">Kliknij "+", aby dodać paczkę. \n Dostarczone paczki są automatycznie archiwizowane.</string>
     <string name="empty_state_archived">Brak zarchiwizowanych paczek</string>
     <string name="dialog_title">Dodaj paczkę</string>
     <string name="hint_name">Nazwa paczki</string>

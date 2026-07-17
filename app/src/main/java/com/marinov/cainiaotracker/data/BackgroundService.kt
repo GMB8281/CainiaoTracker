@@ -43,13 +43,9 @@ class BackgroundService : Service() {
         currentInterval = prefs.getLong(KEY_SYNC_INTERVAL, DEFAULT_INTERVAL)
         startForegroundNotification()
 
-        // Inicia o loop de verificação em background
         serviceScope.launch {
-            // isActive garante que o loop pare se o serviceScope for cancelado (onDestroy)
             while (isActive) {
                 checkForUpdates()
-                // O delay só acontece DEPOIS que toda a lista de encomendas for verificada.
-                // Isso impede a sobreposição de ciclos.
                 delay(currentInterval * 60 * 1000)
             }
         }
@@ -60,7 +56,6 @@ class BackgroundService : Service() {
             val newInterval = intent.getLongExtra(EXTRA_INTERVAL, DEFAULT_INTERVAL)
             if (newInterval != currentInterval) {
                 currentInterval = newInterval
-                // O novo intervalo será lido automaticamente na próxima iteração do loop
             }
         }
         return START_STICKY
@@ -91,11 +86,9 @@ class BackgroundService : Service() {
         val packages = repository.getAllPackages().filter { !it.isArchived }
 
         for ((index, pkg) in packages.withIndex()) {
-            // Verifica se o escopo ainda está ativo (ex: se o serviço foi destruído no meio do ciclo)
             if (!serviceScope.isActive) break
 
             try {
-                // Pula encomendas que estão sendo visualizadas no momento
                 if (ActiveViewingManager.isViewing(pkg.trackingCode)) {
                     continue
                 }
@@ -104,16 +97,23 @@ class BackgroundService : Service() {
                 if (updateResult.hasUpdate && updateResult.latestTitle.isNotEmpty()) {
                     showUpdateNotification(pkg.name, updateResult.latestTitle, pkg.trackingCode)
                 }
+
+                // Auto-arquivamento discreto se entregue
+                val deliveredStatuses = listOf("delivered", "妥投", "livré", "entregue")
+                val isDelivered = deliveredStatuses.any { it.equals(updateResult.status.trim(), ignoreCase = true) }
+                if (isDelivered) {
+                    pkg.isArchived = true
+                    repository.updatePackage(pkg)
+                }
             } catch (e: Exception) {
                 e.printStackTrace()
             }
 
-            // Lógica de delay para evitar Captcha
             if (index < packages.lastIndex) {
                 if ((index + 1) % 3 == 0) {
-                    delay(5 * 60 * 1000) // Espera 5 minutos antes do próximo grupo de 3
+                    delay(5 * 60 * 1000)
                 } else {
-                    delay(30 * 1000) // Espera 30 segundos entre encomendas do mesmo grupo
+                    delay(30 * 1000)
                 }
             }
         }
@@ -151,7 +151,6 @@ class BackgroundService : Service() {
     override fun onDestroy() {
         super.onDestroy()
         isRunning = false
-        // Cancela o escopo, o que faz o `isActive` do loop virar false e encerra a corrotina gracefully
         serviceScope.cancel()
     }
 

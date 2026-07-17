@@ -5,7 +5,7 @@
     <string name="title_settings">Configurações</string>
 
     <string name="empty_state_title">Nenhum pacote adicionado</string>
-    <string name="empty_state_desc">Clique em \"+\" para adicionar um pacote</string>
+    <string name="empty_state_desc">Clique em "+" para adicionar um pacote. \n Pacotes entregues são arquivados automaticamente.</string>
     <string name="empty_state_archived">Nenhum pacote arquivado</string>
 
     <string name="dialog_title">Adicionar pacote</string>
