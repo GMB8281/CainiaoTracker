@@ -15,6 +15,7 @@ import com.google.android.material.textfield.TextInputLayout
 import com.marinov.cainiaotracker.R
 import com.marinov.cainiaotracker.data.Package
 import com.marinov.cainiaotracker.data.PackageRepository
+import com.marinov.cainiaotracker.data.SyncScheduler
 import com.marinov.cainiaotracker.databinding.FragmentHomeBinding
 
 class HomeFragment : Fragment() {
@@ -26,8 +27,7 @@ class HomeFragment : Fragment() {
     private lateinit var adapter: PackageAdapter
 
     override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?
+        inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?
     ): View {
         _binding = FragmentHomeBinding.inflate(inflater, container, false)
         return binding.root
@@ -51,6 +51,7 @@ class HomeFragment : Fragment() {
                 showSnackbar(getString(R.string.snackbar_archived, pkg.name)) {
                     pkg.isArchived = false
                     repository.updatePackage(pkg)
+                    SyncScheduler.onPackageAdded(requireContext(), pkg.trackingCode)
                     refreshList()
                 }
             },
@@ -59,6 +60,7 @@ class HomeFragment : Fragment() {
                 refreshList()
                 showSnackbar(getString(R.string.snackbar_deleted, pkg.name)) {
                     repository.addPackage(pkg)
+                    SyncScheduler.onPackageAdded(requireContext(), pkg.trackingCode)
                     refreshList()
                 }
             },
@@ -70,17 +72,17 @@ class HomeFragment : Fragment() {
 
         binding.recyclerView.layoutManager = LinearLayoutManager(requireContext())
         binding.recyclerView.adapter = adapter
+
         binding.fabAdd.setOnClickListener { showPackageDialog(null) }
+
         refreshList()
     }
 
     private fun refreshList() {
         val packages = repository.getAllPackages().filter { !it.isArchived }
         adapter.submitList(packages)
-
         binding.fabAdd.visibility = View.VISIBLE
         binding.fabAdd.bringToFront()
-
         if (packages.isEmpty()) {
             binding.emptyState.visibility = View.VISIBLE
             binding.recyclerView.visibility = View.GONE
@@ -118,8 +120,8 @@ class HomeFragment : Fragment() {
             positiveButton.setOnClickListener {
                 var name = etName.text.toString().trim()
                 val code = etCode.text.toString().trim()
-
                 var isValid = true
+
                 tilName.error = null
                 tilCode.error = null
 
@@ -144,6 +146,8 @@ class HomeFragment : Fragment() {
                         repository.updatePackage(updatedPackage)
                     } else {
                         repository.addPackage(Package(name = name, trackingCode = code))
+                        // Agenda a 1ª verificação imediatamente e garante o ciclo recorrente
+                        SyncScheduler.onPackageAdded(requireContext(), code)
                     }
                     refreshList()
                     dialog.dismiss()

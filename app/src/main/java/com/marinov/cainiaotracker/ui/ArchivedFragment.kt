@@ -10,11 +10,14 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.google.android.material.snackbar.Snackbar
 import com.marinov.cainiaotracker.R
 import com.marinov.cainiaotracker.data.PackageRepository
+import com.marinov.cainiaotracker.data.SyncScheduler
 import com.marinov.cainiaotracker.databinding.FragmentArchivedBinding
 
 class ArchivedFragment : Fragment() {
+
     private var _binding: FragmentArchivedBinding? = null
     private val binding get() = _binding!!
+
     private lateinit var repository: PackageRepository
     private lateinit var adapter: PackageAdapter
 
@@ -35,6 +38,7 @@ class ArchivedFragment : Fragment() {
             onArchiveClick = { pkg ->
                 pkg.isArchived = false
                 repository.updatePackage(pkg)
+                SyncScheduler.onPackageAdded(requireContext(), pkg.trackingCode)
                 refreshList()
             },
             onDeleteClick = { pkg ->
@@ -42,6 +46,7 @@ class ArchivedFragment : Fragment() {
                 refreshList()
                 showSnackbar(getString(R.string.snackbar_deleted, pkg.name)) {
                     repository.addPackage(pkg)
+                    SyncScheduler.onPackageAdded(requireContext(), pkg.trackingCode)
                     refreshList()
                 }
             },
@@ -56,7 +61,6 @@ class ArchivedFragment : Fragment() {
     private fun refreshList() {
         val packages = repository.getAllPackages().filter { it.isArchived }
         adapter.submitList(packages)
-
         if (packages.isEmpty()) {
             binding.emptyState.visibility = View.VISIBLE
             binding.recyclerView.visibility = View.GONE
