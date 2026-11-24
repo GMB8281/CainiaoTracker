@@ -20,7 +20,7 @@ object SyncScheduler {
     const val DEFAULT_INTERVAL = 60L // 1 hora
 
     private const val REQUEST_CYCLE = 1001
-    private const val SPACING_MS = 30_000L         // 30 s entre encomendas
+    private const val SPACING_MS = 30_000L         // 30 s entre encomendas (espaçamento mínimo)
     private const val GROUP_SIZE = 3
     private const val GROUP_PAUSE_MS = 5 * 60_000L // 5 min de pausa a cada 3
 
@@ -29,8 +29,7 @@ object SyncScheduler {
     private const val RETRY_OFFLINE_MAX_MS = 60 * 60_000L
 
     // false = ELAPSED_REALTIME: conta desde o boot, imune a mudança de hora (recomendado p/ produção)
-    // true  = RTC: segue o relógio de parede — adiantar a hora do device dispara os alarmes vencidos
-    //         (útil para o seu teste de "acelerar o relógio em 1 hora")
+    // true  = RTC: segue o relógio de parede — útil apenas para testes de adiantar o relógio
     private const val USE_RTC = false
 
     private fun now(): Long =
@@ -71,7 +70,7 @@ object SyncScheduler {
         val pi = cyclePendingIntent(context)
         am.cancel(pi)
         val triggerAt = now() + delayMillis
-        scheduleExact(am, triggerAt, pi)
+        scheduleAlarm(am, triggerAt, pi)
         prefs(context).edit { putLong(KEY_NEXT_CYCLE_AT, triggerAt) }
         Log.d(TAG, "CICLO agendado: +${delayMillis / 1000}s (trigger=$triggerAt, base=${if (USE_RTC) "RTC" else "ELAPSED"})")
     }
@@ -101,7 +100,7 @@ object SyncScheduler {
         val pi = packagePendingIntent(context, trackingCode, retryCount)
         am.cancel(pi)
         val triggerAt = now() + delayMillis
-        scheduleExact(am, triggerAt, pi)
+        scheduleAlarm(am, triggerAt, pi)
         Log.d(TAG, "CHECK '$trackingCode' agendado: +${delayMillis / 1000}s (retry=$retryCount, trigger=$triggerAt)")
     }
 
@@ -111,26 +110,24 @@ object SyncScheduler {
         return (RETRY_OFFLINE_MS * factor).coerceAtMost(RETRY_OFFLINE_MAX_MS)
     }
 
-    private fun scheduleExact(am: AlarmManager, triggerAt: Long, pi: PendingIntent) {
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
-            val canExact = if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.S) {
-                am.canScheduleExactAlarms()
-            } else {
-                true
+    /**
+     * Sem permissões de alarme exato (política do Play):
+     *  - Android 12+ (API 31+): inexact com setAndAllowWhileIdle (ainda dispara em Doze).
+     *  - Android 6–11 (API 23–30): exato não exige permissão → timing preciso mantido.
+     * O receiver serializa via tryLock + retry, então o agrupamento de alarmes inexact
+     * não causa verificações simultâneas nem tempestade de captcha.
+     */
+    private fun scheduleAlarm(am: AlarmManager, triggerAt: Long, pi: PendingIntent) {
+        when {
+            Build.VERSION.SDK_INT >= Build.VERSION_CODES.S -> {
+                am.setAndAllowWhileIdle(alarmType(), triggerAt, pi)
             }
-            if (canExact) {
-                try {
-                    am.setExactAndAllowWhileIdle(alarmType(), triggerAt, pi)
-                    return
-                } catch (e: SecurityException) {
-                    Log.e(TAG, "SecurityException no alarme exato → fallback inexact", e)
-                }
-            } else {
-                Log.w(TAG, "canScheduleExactAlarms=false → fallback inexact")
+            Build.VERSION.SDK_INT >= Build.VERSION_CODES.M -> {
+                am.setExactAndAllowWhileIdle(alarmType(), triggerAt, pi)
             }
-            am.setAndAllowWhileIdle(alarmType(), triggerAt, pi)
-        } else {
-            am.setExact(alarmType(), triggerAt, pi)
+            else -> {
+                am.setExact(alarmType(), triggerAt, pi)
+            }
         }
     }
 
