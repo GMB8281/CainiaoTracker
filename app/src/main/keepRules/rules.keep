@@ -10,3 +10,12 @@
 #-keepclassmembers class fqcn.of.javascript.interface.for.webview {
 #   public *;
 #}
+
+
+# Ponte JavaScript do WebView (GetTrackData / PackageActivity).
+# O JS invoca estes métodos por nome via reflexão; sem manter os nomes,
+# o rastreamento e o fluxo de captcha param de funcionar no build release.
+-keepattributes *Annotation*
+-keepclassmembers class * {
+    @android.webkit.JavascriptInterface <methods>;
+}
