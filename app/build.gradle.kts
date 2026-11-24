@@ -13,8 +13,8 @@ android {
         applicationId = "com.marinov.cainiaotracker"
         minSdk = 24
         targetSdk = 37
-        versionCode = 20261124_2
-        versionName = "1.20261124_2"
+        versionCode = 20261125
+        versionName = "1.20261125"
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
     }
 
